@@ -1,0 +1,62 @@
+= API 문서
+
+== 주소 정보 삭제
+
+사용자의 특정 주소 정보를 삭제하는 API에 대한 설명입니다. 사용자는 이 API를 통해 자신의 주소록에서 특정 주소를 삭제할 수 있습니다.
+
+=== 요청 예시
+
+[source,bash]
+----
+$ curl 'http://localhost:8080/api/mypage/addresses/1' -i -X DELETE \
+    -H 'Authorization-Id: 1'
+----
+
+또는 `http` 명령어를 사용하여 요청할 수 있습니다.
+
+[source,bash]
+----
+$ http DELETE 'http://localhost:8080/api/mypage/addresses/1' \
+    'Authorization-Id:1'
+----
+
+=== 요청 형식
+
+[source,http,options="nowrap"]
+----
+DELETE /api/mypage/addresses/1 HTTP/1.1
+Authorization-Id: 1
+Host: localhost:8080
+
+----
+
+=== 응답 예시
+
+[source,http,options="nowrap"]
+----
+HTTP/1.1 200 OK
+
+----
+
+응답 본문은 예시에서 생략되었습니다. 성공적으로 주소가 삭제되면, 일반적으로 `200 OK` 상태 코드가 반환됩니다.
+
+=== 요청 파라미터
+
+.주소 식별자
+|===
+|Parameter |Description
+
+|`+addressId+`
+|삭제할 주소의 식별자
+
+|===
+
+=== 특별한 요청 헤더
+
+|===
+|Name   |Description
+
+|`+Authorization-Id+`
+|사용자 식별을 위한 헤더, 사용자의 고유 ID를 포함합니다.
+
+|===

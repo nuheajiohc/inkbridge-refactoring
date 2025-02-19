@@ -1,0 +1,63 @@
+= Inkbridge API 명세서
+:doctype: book
+:source-highlighter: highlights
+:toc: left
+:toc-title: Content
+:toclevels: 4
+:seclinks:
+:sectnums:
+
+== 배송비 정책
+
+include::deliverypolicy/delivery-policy.adoc[]
+include::deliverypolicy/delivery-policy-admin.adoc[]
+
+== 적립률 정책
+
+include::accumulationratepolicy/accumulation-rate-policy.adoc[]
+include::accumulationratepolicy/accumulation-rate-policy-admin.adoc[]
+
+== 포인트 정책 유형
+
+include::pointpolicytype/point-policy-type.adoc[]
+include::pointpolicytype/point-policy-type-admin.adoc[]
+
+== 포인트 정책
+
+include::pointpolicy/point-policy.adoc[]
+include::pointpolicy/point-policy-admin.adoc[]
+
+== 도서
+
+include::book/book.adoc[]
+include::book/book-admin.adoc[]
+
+== 작가
+
+include::author/author.adoc[]
+
+== 리뷰
+
+include::review/review.adoc[]
+
+== 장바구니
+
+include::cart/cart.adoc[]
+
+== 쿠폰
+
+include::coupon/coupon.adoc[]
+include::coupon/coupon-admin.adoc[]
+
+== 회원
+
+include::member/member.adoc[]
+
+== 결제
+
+include::pay/pay.adoc[]
+
+== 포장지
+
+include::wrapping/wrapping.adoc
+include::wrapping/wrapping-admin.adoc[]

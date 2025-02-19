@@ -1,0 +1,35 @@
+=== 포장자
+
+==== 포장지리스트 불러오기
+
+===== HTTP 요청
+
+include::{snippets}/wrappings/http-request.adoc[]
+
+==== 응답
+
+===== 응답 필드
+
+include::{snippets}/wrappings/response-fields.adoc[]
+
+===== HTTP 응답
+
+include::{snippets}/wrappings/http-response.adoc[]
+
+=== 포장지 디테일 불러오기
+
+==== 요청
+
+===== HTTP 요청
+
+include::{snippets}/wrappings/wrappingId/http-request.adoc[]
+
+==== 응답
+
+===== 응답 필드
+
+include::{snippets}/wrappings/wrappingId/response-fields.adoc[]
+
+===== HTTP 응답
+
+include::{snippets}/wrappings/wrappingId/http-response.adoc[]

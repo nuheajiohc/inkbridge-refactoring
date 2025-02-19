@@ -1,0 +1,154 @@
+=== 리뷰
+
+==== 회원 번호로 리뷰 조회
+
+회원 번호로 회원이 작성한 리뷰를 조회합니다.
+
+===== 요청
+
+====== HTTP 요청
+
+include::{snippets}/review/review-byMember/http-request.adoc[]
+
+====== 요청 파라미터
+
+include::{snippets}/review/review-byMember/request-parameters.adoc[]
+
+===== 응답
+
+====== HTTP 응답
+
+include::{snippets}/review/review-byMember/http-response.adoc[]
+
+==== 도서 번호로 리뷰 조회
+
+도서 번호로 도서가 가진 리뷰를 조회합니다.
+
+===== 요청
+
+====== HTTP 요청
+
+include::{snippets}/review/review-byBook/http-request.adoc[]
+
+====== 요청 경로 변수
+
+include::{snippets}/review/review-byBook/path-parameters.adoc[]
+
+===== 응답
+
+====== HTTP 응답
+
+include::{snippets}/review/review-byBook/http-response.adoc[]
+
+==== 리뷰 등록
+
+리뷰를 등록합니다.
+주문 완료 후 상태가 배송 완료가 되어야 리뷰를 작성할 수 있습니다.
+
+===== 요청
+
+====== HTTP 요청
+
+include::{snippets}/review/review-create/http-request.adoc[]
+
+====== 요청 파라미터
+
+include::{snippets}/review/review-create/request-parameters.adoc[]
+
+====== 요청 파트
+
+include::{snippets}/review/review-create/request-parts.adoc[]
+
+====== 요청 필드
+
+include::{snippets}/review/review-create/request-fields.adoc[]
+
+===== 응답
+
+====== HTTP 응답
+
+include::{snippets}/review/review-create/http-response.adoc[]
+
+==== 예외 - 잘못된 입력값이 들어올 경우
+
+잘못된 입력에 대해 메세지를 반환합니다.
+
+===== 요청
+
+====== HTTP 요청
+
+include::{snippets}/review/review-create-fail/http-request.adoc[]
+
+====== 요청 파라미터
+
+include::{snippets}/review/review-create-fail/request-parameters.adoc[]
+
+====== 요청 파트
+
+include::{snippets}/review/review-create-fail/request-parts.adoc[]
+
+====== 요청 필드
+
+include::{snippets}/review/review-create-fail/request-fields.adoc[]
+
+===== 응답
+
+====== HTTP 응답
+
+include::{snippets}/review/review-create-fail/http-response.adoc[]
+
+==== 리뷰 수정
+
+리뷰 번호로 기존 리뷰 정보를 조회하고 요청 데이터로 리뷰를 수정합니다.
+
+===== 요청
+
+====== HTTP 요청
+
+include::{snippets}/review/review-update/http-request.adoc[]
+
+====== 요청 파라미터
+
+include::{snippets}/review/review-update/request-parameters.adoc[]
+
+====== 요청 파트
+
+include::{snippets}/review/review-update/request-parts.adoc[]
+
+====== 요청 필드
+
+include::{snippets}/review/review-update/request-fields.adoc[]
+
+===== 응답
+
+====== HTTP 응답
+
+include::{snippets}/review/review-update-fail/http-response.adoc[]
+
+==== 예외 - 잘못된 입력값이 들어올 경우
+
+잘못된 입력에 대해 메세지를 반환합니다.
+
+===== 요청
+
+====== HTTP 요청
+
+include::{snippets}/review/review-update-fail/http-request.adoc[]
+
+====== 요청 파라미터
+
+include::{snippets}/review/review-update-fail/request-parameters.adoc[]
+
+====== 요청 파트
+
+include::{snippets}/review/review-update-fail/request-parts.adoc[]
+
+====== 요청 필드
+
+include::{snippets}/review/review-update-fail/request-fields.adoc[]
+
+===== 응답
+
+====== HTTP 응답
+
+include::{snippets}/review/review-update-fail/http-response.adoc[]

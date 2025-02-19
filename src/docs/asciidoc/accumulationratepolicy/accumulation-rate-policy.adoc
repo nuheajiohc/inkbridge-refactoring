@@ -1,0 +1,50 @@
+=== 적립률 정책 ID 조회
+
+==== 요청
+
+===== 요청 파라미터
+
+include::{snippets}/accumulationratepolicy/accumulation-rate-policy-get/path-parameters.adoc[]
+
+===== HTTP 요청
+
+include::{snippets}/accumulationratepolicy/accumulation-rate-policy-get/http-request.adoc[]
+
+==== 응답
+
+===== 응답 필드
+
+include::{snippets}/accumulationratepolicy/accumulation-rate-policy-get/response-fields.adoc[]
+
+===== HTTP 응답
+
+include::{snippets}/accumulationratepolicy/accumulation-rate-policy-get/http-response.adoc[]
+
+==== 예외 - ID에 일치하는 적립률 정책이 존재하지 않은 경우
+
+===== HTTP 요청
+
+include::{snippets}/accumulationratepolicy/accumulation-rate-policy-get-404/http-request.adoc[]
+
+===== HTTP 응답
+
+include::{snippets}/accumulationratepolicy/accumulation-rate-policy-get-404/http-response.adoc[]
+
+=== 적용 적립률 정책 조회
+
+==== 요청
+
+===== HTTP 요청
+
+include::{snippets}/accumulationratepolicy/accumulation-rate-policy-current/http-request.adoc[]
+
+==== 응답
+
+===== 응답 필드
+
+include::{snippets}/accumulationratepolicy/accumulation-rate-policy-current/response-fields.adoc[]
+
+===== HTTP 응답
+
+include::{snippets}/accumulationratepolicy/accumulation-rate-policy-current/http-response.adoc[]
+

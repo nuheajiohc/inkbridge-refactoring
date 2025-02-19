@@ -1,0 +1,281 @@
+=== 주문 생성
+
+==== 요청
+
+===== 요청 필드
+
+include::{snippets}/order/order-post-201/request-fields.adoc[]
+
+===== HTTP 요청
+
+include::{snippets}/order/order-post-201/http-request.adoc[]
+
+==== 응답
+
+===== 응답 필드
+
+include::{snippets}/order/order-post-201/response-fields.adoc[]
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-201/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (우편번호 누락)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/zipCode/blank/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (우편번호 패턴)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/zipCode/pattern/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (주소 공백)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/address/blank/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (주문 수량 음수)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/amount/negative/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (주문 수량 누락)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/amount/null/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (도서 번호 누락)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/book-id/null/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (배송 예정일 누락)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/delivery-date/null/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (배송비 누락)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/delivery-price/null/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (배송비 음수)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/delivery-price/negative/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (상세 주소 공백)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/detail-address/blank/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (주문 이름 공백)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/order-name/blank/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (주문 이름 길이)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/order-name/size/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (결제금액 음수)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/pay-amount/negative/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (결제금액 누락)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/pay-amount/null/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (사용 포인트 음수)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/point/negative/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (사용 포인트 누락)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/point/null/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (도서 판매가 누락)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/price/null/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (수취인 이름 누락)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/receiver-name/blank/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (수취인 이름 길이)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/receiver-name/size/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (수취인 전화번호 누락)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/receiver-phone-number/blank/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (수취인 전화번호 패턴)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/receiver-phone-number/pattern/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (주문인 이름 누락)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/sender-name/blank/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (주문인 이름 길이)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/sender-name/size/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (주문인 전화번호 누락)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/sender-phone-number/blank/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (주문인 전화번호 패턴)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/sender-phone-number/pattern/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (주문인 이메일 누락)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/sender-email/blank/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (주문인 이메일 형식)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/sender-email/email/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (포장 가격 누락)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/wrapping-price/null/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (포장 가격 음수)
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-422/wrapping-price/negative/http-response.adoc[]
+
+==== 예외 - 도서 정보를 찾지 못한 경우
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-book-404/http-response.adoc[]
+
+==== 예외 - 쿠폰 정보를 찾지 못한 경우
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-coupon-404/http-response.adoc[]
+
+==== 예외 - 회원 정보를 찾지 못한 경우
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-member-404/http-response.adoc[]
+
+==== 예외 - 주문 상태를 찾지 못한 경우
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-order-status-404/http-response.adoc[]
+
+==== 예외 - 포장 정보를 찾지 못한 경우
+
+===== HTTP 응답
+
+include::{snippets}/order/order-post-wrapping-404/http-response.adoc[]
+
+=== 주문 결제 정보 조회
+
+==== 요청
+
+===== 요청 패스
+
+include::{snippets}/order/order-payment-path-get-200/path-parameters.adoc[]
+
+===== HTTP 요청
+
+include::{snippets}/order/order-payment-path-get-200/http-request.adoc[]
+
+==== 응답
+
+===== 응답 필드
+
+include::{snippets}/order/order-payment-path-get-200/response-fields.adoc[]
+
+===== HTTP 응답
+
+include::{snippets}/order/order-payment-path-get-200/http-response.adoc[]
+
+==== 예외 - 주문 정보를 찾지 못한 경우
+
+===== HTTP 응답
+
+include::{snippets}/order/order-payment-path-get-404/http-response.adoc[]
+
+=== 주문 정보 조회
+
+==== 요청
+
+===== 요청 패스
+
+include::{snippets}/order/order-get/order-code/200/path-parameters.adoc[]
+
+===== HTTP 요청
+
+include::{snippets}/order/order-get/order-code/200/http-request.adoc[]
+
+==== 응답
+
+===== 응답 필드
+
+include::{snippets}/order/order-get/order-code/200/response-fields.adoc[]
+
+===== HTTP 응답
+
+include::{snippets}/order/order-get/order-code/200/http-response.adoc[]
+
+==== 예외 - 주문 정보를 찾지 못한 경우
+
+===== HTTP 응답
+
+include::{snippets}/order/order-get/order-code/404/http-response.adoc[]

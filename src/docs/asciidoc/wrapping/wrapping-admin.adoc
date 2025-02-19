@@ -1,0 +1,53 @@
+=== 포장지 관리자
+
+==== 포장지 생성
+
+===== HTTP 요청
+
+include::{snippets}/admin/wrappings/create/http-request.adoc[]
+
+==== 응답
+
+===== HTTP 응답
+
+include::{snippets}/admin/wrappings/create/http-response.adoc[]
+
+=== 포장지 업데이트
+
+==== 요청
+
+===== HTTP 요청
+
+include::{snippets}/admin/wrappings/update/http-request.adoc[]
+
+==== 응답
+
+===== HTTP 응답
+
+include::{snippets}/admin/wrappings/update/http-response.adoc[]
+
+==== 포장지 생성 실패
+
+===== HTTP 요청
+
+include::{snippets}/admin/wrappings/create_fail/http-request.adoc[]
+
+==== 응답
+
+===== HTTP 응답
+
+include::{snippets}/admin/wrappings/create_fail/http-response.adoc[]
+
+=== 포장지 업데이트 실패
+
+==== 요청
+
+===== HTTP 요청
+
+include::{snippets}/admin/wrappings/update_fail/http-request.adoc[]
+
+==== 응답
+
+===== HTTP 응답
+
+include::{snippets}/admin/wrappings/update_fail/http-response.adoc[]

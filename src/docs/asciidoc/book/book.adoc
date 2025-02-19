@@ -1,0 +1,73 @@
+=== 도서
+
+==== 도서 목록 조회
+
+메인 페이지에서 도서 목록을 조회합니다.
+
+===== 요청
+
+====== HTTP 요청
+
+include::{snippets}/book/books-get/http-request.adoc[]
+
+===== 응답
+
+====== 응답 필드
+
+include::{snippets}/book/books-get/response-fields.adoc[]
+
+====== HTTP 응답
+
+include::{snippets}/book/books-get/response-body.adoc[]
+
+==== 장바구니용 도서 상세 조회
+
+도서 번호들로 장바구니 및 주문용 도서 상세를 조회합니다.
+
+===== 요청
+
+====== 요청 필드
+
+include::{snippets}/book/books-get-cart/http-request.adoc[]
+
+====== 요청 파라미터
+
+include::{snippets}/book/books-get-cart/request-parameters.adoc[]
+
+===== 응답
+
+====== 응답 필드
+
+include::{snippets}/book/books-get-cart/response-fields.adoc[]
+
+====== HTTP 응답
+
+include::{snippets}/book/books-get-cart/http-response.adoc[]
+
+==== 도서 상세 조회
+
+도서 번호로 도서 상세를 조회합니다. memberId로 좋아요 버튼을 보여줄지 판단합니다.
+
+===== 요청
+
+====== HTTP 요청
+
+include::{snippets}/book/book-get-detail/http-request.adoc[]
+
+====== 요청 경로 변수
+
+include::{snippets}/book/book-get-detail/path-parameters.adoc[]
+
+====== 요청 파라미터
+
+include::{snippets}/book/book-get-detail/request-parameters.adoc[]
+
+====== 응답
+
+====== 응답 필드
+
+include::{snippets}/book/book-get-detail/response-fields.adoc[]
+
+====== HTTP 응답
+
+include::{snippets}/book/book-get-detail/response-body.adoc[]

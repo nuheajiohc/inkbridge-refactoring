@@ -1,0 +1,130 @@
+=== 쿠폰리스트
+
+==== 요청
+
+===== HTTP 요청
+
+include::{snippets}/admin/coupons/get/http-request.adoc[]
+
+==== 응답
+
+===== 응답 필드
+
+include::{snippets}/admin/coupons/get/response-fields.adoc[]
+
+===== HTTP 응답
+
+include::{snippets}/admin/coupons/get/http-response.adoc[]
+
+=== 쿠폰생성
+
+==== 요청
+
+===== HTTP 요청
+
+include::{snippets}/admin/coupons/http-request.adoc[]
+
+==== 응답
+
+===== HTTP 응답
+
+include::{snippets}/admin/coupons/http-response.adoc[]
+
+=== 쿠폰생성오류
+
+==== 요청
+
+===== HTTP 요청
+
+include::{snippets}/admin/coupons-fail/http-request.adoc[]
+
+==== 응답
+
+===== HTTP 응답
+
+include::{snippets}/admin/coupons-fail/http-response.adoc[]
+
+=== 책쿠폰 등록
+
+==== 요청
+
+===== HTTP 요청
+
+include::{snippets}/admin/coupons/book-coupons/http-request.adoc[]
+
+==== 응답
+
+===== HTTP 응답
+
+include::{snippets}/admin/coupons/book-coupons/http-response.adoc[]
+
+=== 책쿠폰 등록 실패
+
+==== 요청
+
+===== HTTP 요청
+
+include::{snippets}/admin/coupons/book-coupons-fail/http-request.adoc[]
+
+==== 응답
+
+===== HTTP 응답
+
+include::{snippets}/admin/coupons/book-coupons-fail/http-response.adoc[]
+
+=== 카테고리 쿠폰 등록
+
+==== 요청
+
+===== HTTP 요청
+
+include::{snippets}/admin/coupons/category-coupons/http-request.adoc[]
+
+==== 응답
+
+===== HTTP 응답
+
+include::{snippets}/admin/coupons/category-coupons/http-response.adoc[]
+
+=== 카테고리 쿠폰 등록 실패
+
+==== 요청
+
+===== HTTP 요청
+
+include::{snippets}/admin/coupons/category-coupons-fail/http-request.adoc[]
+
+==== 응답
+
+===== HTTP 응답
+
+include::{snippets}/admin/coupons/category-coupons-fail/http-response.adoc[]
+
+=== 생일 쿠폰 등록
+
+==== 요청
+
+===== HTTP 요청
+
+include::{snippets}/admin/coupons/birthday-coupons/http-request.adoc[]
+
+==== 응답
+
+===== HTTP 응답
+
+include::{snippets}/admin/coupons/birthday-coupons/http-response.adoc[]
+
+=== 생일쿠폰 등록 실패
+
+==== 요청
+
+===== HTTP 요청
+
+include::{snippets}/admin/coupons/birthday-coupons/http-request.adoc[]
+
+==== 응답
+
+===== HTTP 응답
+
+include::{snippets}/admin/coupons/birthday-coupons/http-response.adoc[]
+

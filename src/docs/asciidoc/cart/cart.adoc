@@ -1,0 +1,46 @@
+=== 장바구니
+
+==== 장바구니 조회
+
+회원 번호로 장바구니를 조회합니다.
+
+===== 요청
+
+====== HTTP 요청
+
+include::{snippets}/cart/cart-get/http-request.adoc[]
+
+====== 요청 경로 변수
+
+include::{snippets}/cart/cart-get/path-parameters.adoc[]
+
+===== 응답
+
+====== HTTP 응답
+
+include::{snippets}/cart/cart-get/http-response.adoc[]
+
+====== 응답 필드
+
+include::{snippets}/cart/cart-get/response-fields.adoc[]
+
+==== 장바구니 등록
+
+장바구니를 등록합니다.
+
+===== 요청
+
+====== HTTP 요청
+
+include::{snippets}/cart/cart-create/http-request.adoc[]
+
+====== 요청 필드
+
+include::{snippets}/cart/cart-create/request-fields.adoc[]
+
+===== 응답
+
+====== HTTP 응답
+
+include::{snippets}/cart/cart-create/http-response.adoc[]
+

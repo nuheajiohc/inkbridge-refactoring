@@ -1,0 +1,27 @@
+=== 결제
+
+==== 요청
+
+===== 요청 필드
+
+include::{snippets}/pay/post-201/request-fields.adoc[]
+
+===== HTTP 요청
+
+include::{snippets}/pay/post-201/http-request.adoc[]
+
+==== 응답
+
+===== HTTP 응답
+
+include::{snippets}/pay/post-201/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패
+
+===== HTTP 요청
+
+include::{snippets}/pay/post-422/http-request.adoc[]
+
+===== HTTP 응답
+
+include::{snippets}/pay/post-422/http-response.adoc[]

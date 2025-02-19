@@ -1,0 +1,223 @@
+=== 회원가입
+
+==== 요청
+
+===== 요청 필드
+
+include::{snippets}/member/member-create/request-fields.adoc[]
+
+===== HTTP 요청
+
+include::{snippets}/member/member-create/http-request.adoc[]
+
+===== 응답
+
+===== HTTP 응답
+
+include::{snippets}/member/member-create/http-response.adoc[]
+
+'''
+
+==== 예외 - 유효성 검사 실패 (이메일 null)
+
+===== HTTP 응답
+
+include::{snippets}/member/member-create-email-null-fail/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (비밀번호 null)
+
+===== HTTP 응답
+
+include::{snippets}/member/member-create-password-null-fail/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (비밀번호 공백)
+
+===== HTTP 응답
+
+include::{snippets}/member/member-create-password-blank-fail/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (이름 null)
+
+===== HTTP 응답
+
+include::{snippets}/member/member-create-memberName-null-fail/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (이름 공백)
+
+===== HTTP 응답
+
+include::{snippets}/member/member-create-memberName-blank-fail/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (생일 null)
+
+===== HTTP 응답
+
+include::{snippets}/member/member-create-birthday-null-fail/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (핸드폰 번호 null)
+
+===== HTTP 응답
+
+include::{snippets}/member/member-create-phoneNumber-null-fail/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (핸드폰 번호 공백)
+
+===== HTTP 응답
+
+include::{snippets}/member/member-create-phoneNumber-blank-fail/http-response.adoc[]
+
+'''
+
+=== 로그인 정보 가져오기
+
+==== 요청
+
+===== 요청 필드
+
+include::{snippets}/member/member-auth-login-success/request-fields.adoc[]
+
+===== HTTP 요청
+
+include::{snippets}/member/member-auth-login-success/http-request.adoc[]
+
+===== 응답
+
+===== 응답 필드
+
+include::{snippets}/member/member-auth-login-success/response-fields.adoc[]
+
+===== HTTP 응답
+
+include::{snippets}/member/member-auth-login-success/http-response.adoc[]
+
+'''
+
+==== 예외 - 유효성 검사 실패 (이메일 - null)
+
+===== HTTP 응답
+
+include::{snippets}/member/member-auth-login-fail/http-response.adoc[]
+
+
+'''
+
+=== 이메일 중복 체크
+
+==== 요청
+
+===== 요청 필드
+
+include::{snippets}/member/member-duplicated-email-success/request-fields.adoc[]
+
+===== HTTP 요청
+
+include::{snippets}/member/member-duplicated-email-success/http-request.adoc[]
+
+===== 응답
+
+===== HTTP 응답
+
+include::{snippets}/member/member-duplicated-email-success/http-response.adoc[]
+
+'''
+
+==== 중복일 경우
+
+===== HTTP 응답
+
+include::{snippets}/member/member-duplicated-email-fail/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (이메일 - 패턴)
+
+===== HTTP 응답
+
+include::{snippets}/member/member-duplicated-email-pattern-fail/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패 (이메일 - 공백)
+
+===== HTTP 응답
+
+include::{snippets}/member/member-duplicated-email-blank-fail/http-response.adoc[]
+'''
+
+=== 회원 정보 가져오기
+
+==== 요청
+
+===== HTTP 요청
+
+include::{snippets}/member/member-memberInfo-success/http-request.adoc[]
+
+===== 응답
+
+===== 응답 필드
+
+include::{snippets}/member/member-memberInfo-success/response-fields.adoc[]
+
+===== HTTP 응답
+
+include::{snippets}/member/member-getOauthEmail-success/http-response.adoc[]
+
+'''
+
+=== 소셜 멤버 체크
+
+==== 요청
+
+===== 응답 필드
+
+include::{snippets}/member/member-check-oauthMember-success/request-fields.adoc[]
+
+===== HTTP 요청
+
+include::{snippets}/member/member-check-oauthMember-success/http-request.adoc[]
+
+===== 응답
+
+===== HTTP 응답
+
+include::{snippets}/member/member-check-oauthMember-success/http-response.adoc[]
+
+'''
+
+==== 소셜 멤버 체크 실패
+
+===== HTTP 응답
+
+include::{snippets}/member/member-check-oauthMember-fail/http-response.adoc[]
+
+==== 예외 - 유효성 검사 실패
+
+===== HTTP 응답
+
+include::{snippets}/member/member-check-oauthMember-pattern-fail/http-response.adoc[]
+
+
+
+'''
+
+=== 소셜 멤버 아이디 가져오기
+
+==== 요청
+
+===== 요청 필드
+
+include::{snippets}/member/member-getOauthEmail-success/request-fields.adoc[]
+
+===== HTTP 요청
+
+include::{snippets}/member/member-getOauthEmail-success/http-request.adoc[]
+
+==== 응답
+
+===== HTTP 응답
+
+include::{snippets}/member/member-getOauthEmail-success/http-response.adoc[]
+
+'''
+
+==== 예외 - 유효성 검사 실패
+
+===== HTTP 응답
+
+include::{snippets}/member/member-getOauthEmail-fail/http-response.adoc[]

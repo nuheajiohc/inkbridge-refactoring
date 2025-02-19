@@ -1,0 +1,28 @@
+=== 적용 유형 정책 조회
+
+==== 요청
+
+===== HTTP 요청
+
+include::{snippets}/pointpolicy/point-policy-get/http-request.adoc[]
+
+==== 응답
+
+===== 응답 필드
+
+include::{snippets}/pointpolicy/point-policy-get/response-fields.adoc[]
+
+===== HTTP 응답
+
+include::{snippets}/pointpolicy/point-policy-get/http-response.adoc[]
+
+==== 예외 - 존재하지 않는 포인트 정책 유형
+
+===== HTTP 요청
+
+include::{snippets}/pointpolicy/point-policy-get-404/http-request.adoc[]
+
+
+===== HTTP 응답
+
+include::{snippets}/pointpolicy/point-policy-get-404/http-response.adoc[]

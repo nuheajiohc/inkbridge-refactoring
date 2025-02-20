@@ -23,8 +23,10 @@
         </encoder>
     </appender>
 
-
-    <!-- 환경별 설정 -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+<!--     환경별 설정 -->
     <springProfile name="prod">
         <root level="${PROD_LOG_LEVEL:-INFO}">
             <appender-ref ref="CONSOLE"/>

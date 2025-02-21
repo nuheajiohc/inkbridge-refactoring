@@ -1,4 +1,4 @@
-package com.nhnacademy.inkbridge.backend.property;
+package com.nhnacademy.inkbridge.backend.infra;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "datasource")
 @Setter
 @Getter
-public class JpaProperty {
+public class JpaProperties {
 
     private String username;
 

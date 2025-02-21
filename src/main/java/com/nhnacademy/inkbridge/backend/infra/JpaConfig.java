@@ -1,6 +1,5 @@
-package com.nhnacademy.inkbridge.backend.config;
+package com.nhnacademy.inkbridge.backend.infra;
 
-import com.nhnacademy.inkbridge.backend.property.JpaProperty;
 import javax.sql.DataSource;
 import lombok.AllArgsConstructor;
 import org.apache.commons.dbcp2.BasicDataSource;
@@ -17,15 +16,15 @@ import org.springframework.context.annotation.Configuration;
 @AllArgsConstructor
 public class JpaConfig {
 
-    private JpaProperty jpaProperty;
-    private KeyConfig keyConfig;
+    private JpaProperties jpaProperties;
+    private KeyReader keyReader;
     @Bean
     public DataSource getDataSource() {
         BasicDataSource dataSource = new BasicDataSource();
 
-        dataSource.setUrl(keyConfig.keyStore(jpaProperty.getUrl()));
-        dataSource.setUsername(keyConfig.keyStore(jpaProperty.getUsername()));
-        dataSource.setPassword(keyConfig.keyStore(jpaProperty.getPassword()));
+        dataSource.setUrl(keyReader.readKey(jpaProperties.getUrl()));
+        dataSource.setUsername(keyReader.readKey(jpaProperties.getUsername()));
+        dataSource.setPassword(keyReader.readKey(jpaProperties.getPassword()));
 
         dataSource.setInitialSize(20);
         dataSource.setMaxIdle(20);

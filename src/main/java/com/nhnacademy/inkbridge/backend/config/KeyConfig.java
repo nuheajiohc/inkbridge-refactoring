@@ -2,6 +2,8 @@ package com.nhnacademy.inkbridge.backend.config;
 
 import com.nhnacademy.inkbridge.backend.dto.keymanager.KeyResponseDto;
 import com.nhnacademy.inkbridge.backend.exception.KeyManagerException;
+import com.nhnacademy.inkbridge.backend.infrastructure.old.NhnKMSProperties;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
@@ -20,14 +22,13 @@ import org.apache.http.conn.ssl.TrustSelfSignedStrategy;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.ssl.SSLContextBuilder;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.ConstructorBinding;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -39,25 +40,21 @@ import org.springframework.web.util.UriComponentsBuilder;
  * @version 2024/02/27
  */
 
-@ConstructorBinding
+@Component
 @RequiredArgsConstructor
-@ConfigurationProperties(prefix = "secure-key-manager")
 public class KeyConfig {
 
-    private final String password;
-    private final String url;
-    private final String path;
-    private final String appKey;
+    private final NhnKMSProperties properties;
 
     public String keyStore(String keyId) {
         try {
             KeyStore clientStore = KeyStore.getInstance("PKCS12");
             InputStream result = new ClassPathResource("inkBridge.p12").getInputStream();
-            clientStore.load(result, password.toCharArray());
+            clientStore.load(result, properties.getPassword().toCharArray());
 
             SSLContext sslContext = SSLContextBuilder.create()
                 .setProtocol("TLS")
-                .loadKeyMaterial(clientStore, password.toCharArray())
+                .loadKeyMaterial(clientStore, properties.getPassword().toCharArray())
                 .loadTrustMaterial(new TrustSelfSignedStrategy())
                 .build();
 
@@ -77,11 +74,11 @@ public class KeyConfig {
             RestTemplate restTemplate = new RestTemplate(requestFactory);
 
             URI uri = UriComponentsBuilder
-                .fromUriString(url)
-                .path(path)
+                .fromUriString(properties.getUrl())
+                .path(properties.getPath())
                 .encode()
                 .build()
-                .expand(appKey, keyId)
+                .expand(properties.getAppKey(), keyId)
                 .toUri();
             return Objects.requireNonNull(restTemplate.exchange(uri,
                         HttpMethod.GET,

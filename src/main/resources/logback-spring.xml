@@ -23,8 +23,17 @@
         </encoder>
     </appender>
 
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+<!--     환경별 설정 -->
+    <springProfile name="local">
+        <root level="INFO">
+            <appender-ref ref="CONSOLE"/>
+        </root>
+    </springProfile>
 
-    <!-- 환경별 설정 -->
+
     <springProfile name="prod">
         <root level="${PROD_LOG_LEVEL:-INFO}">
             <appender-ref ref="CONSOLE"/>
@@ -32,6 +41,7 @@
         </root>
 
     </springProfile>
+
     <springProfile name="dev">
         <root level="${DEV_LOG_LEVEL:-DEBUG}">
             <appender-ref ref="CONSOLE"/>

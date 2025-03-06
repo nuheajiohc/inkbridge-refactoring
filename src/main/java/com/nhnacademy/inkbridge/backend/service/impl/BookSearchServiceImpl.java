@@ -4,6 +4,8 @@ import com.nhnacademy.inkbridge.backend.entity.Search;
 import com.nhnacademy.inkbridge.backend.repository.BookSearchRepository;
 import com.nhnacademy.inkbridge.backend.service.BookSearchService;
 import lombok.RequiredArgsConstructor;
+
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -13,7 +15,7 @@ import org.springframework.stereotype.Service;
  * @author choijaehun
  * @version 2024/03/11
  */
-
+@ConditionalOnProperty(name="elasticsearch.enabled", havingValue = "true", matchIfMissing = false)
 @Service
 @RequiredArgsConstructor
 public class BookSearchServiceImpl implements BookSearchService {

@@ -1,4 +1,4 @@
-package com.nhnacademy.inkbridge.backend.infra;
+package com.nhnacademy.inkbridge.backend.infrastructure.old;
 
 import javax.sql.DataSource;
 import lombok.AllArgsConstructor;
@@ -18,6 +18,7 @@ public class JpaConfig {
 
     private JpaProperties jpaProperties;
     private KeyReader keyReader;
+
     @Bean
     public DataSource getDataSource() {
         BasicDataSource dataSource = new BasicDataSource();
@@ -40,3 +41,5 @@ public class JpaConfig {
         return dataSource;
     }
 }
+
+

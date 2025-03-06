@@ -1,4 +1,4 @@
-package com.nhnacademy.inkbridge.backend.infra;
+package com.nhnacademy.inkbridge.backend.infrastructure.old;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.ConstructorBinding;
@@ -10,7 +10,7 @@ import lombok.RequiredArgsConstructor;
 @ConstructorBinding
 @RequiredArgsConstructor
 @ConfigurationProperties("secure-key-manager")
-public class NhnKeyProperties {
+public class NhnKMSProperties {
 
 	private final String appKey;
 	private final String password;

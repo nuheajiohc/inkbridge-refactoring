@@ -1,4 +1,4 @@
-package com.nhnacademy.inkbridge.backend.infra;
+package com.nhnacademy.inkbridge.backend.infrastructure.old;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -38,7 +38,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class NhnKeyDecryptor implements KeyDecryptor {
 
-	private final NhnKeyProperties properties;
+	private final NhnKMSProperties properties;
 
 	@Override
 	public String decrypt(String key) {

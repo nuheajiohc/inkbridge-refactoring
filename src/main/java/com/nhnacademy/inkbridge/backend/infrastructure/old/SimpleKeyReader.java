@@ -1,4 +1,4 @@
-package com.nhnacademy.inkbridge.backend.infra;
+package com.nhnacademy.inkbridge.backend.infrastructure.old;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;

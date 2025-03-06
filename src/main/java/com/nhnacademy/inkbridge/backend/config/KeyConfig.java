@@ -2,7 +2,7 @@ package com.nhnacademy.inkbridge.backend.config;
 
 import com.nhnacademy.inkbridge.backend.dto.keymanager.KeyResponseDto;
 import com.nhnacademy.inkbridge.backend.exception.KeyManagerException;
-import com.nhnacademy.inkbridge.backend.infra.NhnKeyProperties;
+import com.nhnacademy.inkbridge.backend.infrastructure.old.NhnKMSProperties;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -22,8 +22,6 @@ import org.apache.http.conn.ssl.TrustSelfSignedStrategy;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.ssl.SSLContextBuilder;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.ConstructorBinding;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -46,7 +44,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 @RequiredArgsConstructor
 public class KeyConfig {
 
-    private final NhnKeyProperties properties;
+    private final NhnKMSProperties properties;
 
     public String keyStore(String keyId) {
         try {

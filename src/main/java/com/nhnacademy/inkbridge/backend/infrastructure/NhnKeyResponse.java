@@ -1,14 +1,13 @@
 package com.nhnacademy.inkbridge.backend.infrastructure;
 
-import com.nhnacademy.inkbridge.backend.dto.keymanager.KeyResponseDto;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
 public class NhnKeyResponse {
-	private KeyResponseDto.Header header;
-	private KeyResponseDto.Body body;
+	private Header header;
+	private Body body;
 
 	@Getter
 	@NoArgsConstructor

@@ -1,4 +1,4 @@
-package com.nhnacademy.inkbridge.backend.infrastructure;
+package com.nhnacademy.inkbridge.backend.infrastructure.encrypt;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,8 +27,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
-
-import com.nhnacademy.inkbridge.backend.dto.keymanager.KeyResponseDto;
 
 public class NhnKeyDecryptor implements KeyDecryptor {
 

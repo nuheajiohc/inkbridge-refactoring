@@ -1,4 +1,4 @@
-package com.nhnacademy.inkbridge.backend.infrastructure;
+package com.nhnacademy.inkbridge.backend.infrastructure.encrypt;
 
 public interface KeyDecryptor {
 

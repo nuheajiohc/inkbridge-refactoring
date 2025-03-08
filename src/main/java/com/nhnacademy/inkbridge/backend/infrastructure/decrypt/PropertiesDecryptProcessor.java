@@ -26,7 +26,7 @@ public class PropertiesDecryptProcessor implements EnvironmentPostProcessor {
 		if (!propertyDetector.existsEncryptedProperty(environment))
 			return;
 
-		initKeyDecryptor(environment);
+		initPropertyDecryptor(environment);
 
 		for (PropertySource<?> propertySource : environment.getPropertySources()) {
 			if (propertySource instanceof EnumerablePropertySource) {
@@ -45,7 +45,7 @@ public class PropertiesDecryptProcessor implements EnvironmentPostProcessor {
 		environment.getPropertySources().addFirst(new MapPropertySource("decryptedProperties", decryptedProperties));
 	}
 
-	private void initKeyDecryptor(ConfigurableEnvironment environment) {
+	private void initPropertyDecryptor(ConfigurableEnvironment environment) {
 		Binder binder = Binder.get(environment);
 		NhnKeyProperties properties = binder.bind("secure-key-manager", NhnKeyProperties.class)
 			.orElseThrow(() -> new IllegalStateException("properties값 매핑 실패"));

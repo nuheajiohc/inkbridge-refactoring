@@ -28,13 +28,13 @@ import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.nhnacademy.inkbridge.backend.infrastructure.decrypt.KeyDecryptor;
+import com.nhnacademy.inkbridge.backend.infrastructure.decrypt.PropertyDecryptor;
 
-public class NhnKeyDecryptor implements KeyDecryptor {
+public class NhnPropertyDecryptor implements PropertyDecryptor {
 
 	private final NhnKeyProperties properties;
 
-	public NhnKeyDecryptor(NhnKeyProperties properties) {
+	public NhnPropertyDecryptor(NhnKeyProperties properties) {
 		this.properties = properties;
 	}
 

@@ -11,13 +11,13 @@ import org.springframework.core.env.EnumerablePropertySource;
 import org.springframework.core.env.MapPropertySource;
 import org.springframework.core.env.PropertySource;
 
-import com.nhnacademy.inkbridge.backend.infrastructure.decrypt.nhn.NhnKeyDecryptor;
 import com.nhnacademy.inkbridge.backend.infrastructure.decrypt.nhn.NhnKeyProperties;
+import com.nhnacademy.inkbridge.backend.infrastructure.decrypt.nhn.NhnPropertyDecryptor;
 
 public class PropertiesDecryptProcessor implements EnvironmentPostProcessor {
 
 	private final EncryptedPropertyDetector propertyDetector = new EncryptedPropertyDetector();
-	private KeyDecryptor keyDecryptor;
+	private PropertyDecryptor propertyDecryptor;
 
 	@Override
 	public void postProcessEnvironment(ConfigurableEnvironment environment, SpringApplication application) {
@@ -35,7 +35,7 @@ public class PropertiesDecryptProcessor implements EnvironmentPostProcessor {
 					String propertyValue = environment.getProperty(propertyName);
 					if (propertyDetector.isEncrypted(propertyValue)) {
 						String unwrapEncryptedValue = propertyDetector.unwrapEncryptedValue(propertyValue);
-						String decryptedValue = keyDecryptor.decrypt(unwrapEncryptedValue);
+						String decryptedValue = propertyDecryptor.decrypt(unwrapEncryptedValue);
 						decryptedProperties.put(propertyName, decryptedValue);
 					}
 				}
@@ -45,12 +45,11 @@ public class PropertiesDecryptProcessor implements EnvironmentPostProcessor {
 		environment.getPropertySources().addFirst(new MapPropertySource("decryptedProperties", decryptedProperties));
 	}
 
-
 	private void initKeyDecryptor(ConfigurableEnvironment environment) {
 		Binder binder = Binder.get(environment);
 		NhnKeyProperties properties = binder.bind("secure-key-manager", NhnKeyProperties.class)
 			.orElseThrow(() -> new IllegalStateException("properties값 매핑 실패"));
 
-		keyDecryptor = new NhnKeyDecryptor(properties);
+		propertyDecryptor = new NhnPropertyDecryptor(properties);
 	}
 }

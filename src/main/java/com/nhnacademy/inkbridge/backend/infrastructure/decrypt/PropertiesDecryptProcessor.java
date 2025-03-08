@@ -1,4 +1,4 @@
-package com.nhnacademy.inkbridge.backend.infrastructure.encrypt;
+package com.nhnacademy.inkbridge.backend.infrastructure.decrypt;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,6 +10,9 @@ import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.EnumerablePropertySource;
 import org.springframework.core.env.MapPropertySource;
 import org.springframework.core.env.PropertySource;
+
+import com.nhnacademy.inkbridge.backend.infrastructure.decrypt.nhn.NhnKeyDecryptor;
+import com.nhnacademy.inkbridge.backend.infrastructure.decrypt.nhn.NhnKeyProperties;
 
 public class PropertiesDecryptProcessor implements EnvironmentPostProcessor {
 

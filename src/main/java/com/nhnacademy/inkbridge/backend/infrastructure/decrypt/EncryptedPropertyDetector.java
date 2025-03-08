@@ -1,4 +1,4 @@
-package com.nhnacademy.inkbridge.backend.infrastructure.encrypt;
+package com.nhnacademy.inkbridge.backend.infrastructure.decrypt;
 
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.EnumerablePropertySource;

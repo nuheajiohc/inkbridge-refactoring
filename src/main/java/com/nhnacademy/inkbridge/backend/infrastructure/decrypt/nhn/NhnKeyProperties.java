@@ -1,4 +1,4 @@
-package com.nhnacademy.inkbridge.backend.infrastructure.encrypt;
+package com.nhnacademy.inkbridge.backend.infrastructure.decrypt.nhn;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

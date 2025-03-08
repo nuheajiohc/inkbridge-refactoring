@@ -1,4 +1,4 @@
-package com.nhnacademy.inkbridge.backend.infrastructure.old;
+package com.nhnacademy.inkbridge.backend.infrastructure.decrypt.nhn;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,26 +25,24 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
-import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.nhnacademy.inkbridge.backend.dto.keymanager.KeyResponseDto;
-import com.nhnacademy.inkbridge.backend.exception.KeyManagerException;
+import com.nhnacademy.inkbridge.backend.infrastructure.decrypt.PropertyDecryptor;
 
-import lombok.RequiredArgsConstructor;
+public class NhnPropertyDecryptor implements PropertyDecryptor {
 
-@Component
-@RequiredArgsConstructor
-public class NhnKeyDecryptor implements KeyDecryptor {
+	private final NhnKeyProperties properties;
 
-	private final NhnKMSProperties properties;
+	public NhnPropertyDecryptor(NhnKeyProperties properties) {
+		this.properties = properties;
+	}
 
 	@Override
-	public String decrypt(String key) {
+	public String decrypt(String encryptedKey) {
 		try {
 			KeyStore clientStore = KeyStore.getInstance("PKCS12");
-			InputStream result = new ClassPathResource("inkBridge.p12").getInputStream();
+			InputStream result = new ClassPathResource("key-store.p12").getInputStream();
 			clientStore.load(result, properties.getPassword().toCharArray());
 
 			SSLContext sslContext = SSLContextBuilder.create()
@@ -73,12 +71,13 @@ public class NhnKeyDecryptor implements KeyDecryptor {
 				.path(properties.getPath())
 				.encode()
 				.build()
-				.expand(properties.getAppKey(), key)
+				.expand(properties.getAppKey(), encryptedKey)
 				.toUri();
+
 			return Objects.requireNonNull(restTemplate.exchange(uri,
 						HttpMethod.GET,
 						new HttpEntity<>(headers),
-						KeyResponseDto.class)
+						NhnKeyResponse.class)
 					.getBody())
 				.getBody()
 				.getSecret();
@@ -86,7 +85,7 @@ public class NhnKeyDecryptor implements KeyDecryptor {
 				 | NoSuchAlgorithmException
 				 | UnrecoverableKeyException
 				 | KeyManagementException e) {
-			throw new KeyManagerException(e.getMessage());
+			throw new RuntimeException(e.getMessage());
 		}
 	}
 }

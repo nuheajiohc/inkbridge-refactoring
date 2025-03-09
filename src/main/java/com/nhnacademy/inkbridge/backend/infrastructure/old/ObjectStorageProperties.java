@@ -24,5 +24,5 @@ public class ObjectStorageProperties {
     private final String password;
     private final String username;
     private final String tenantId;
-    private final String authUrl;
+    private final String authUrl; //identity 의미?
 }

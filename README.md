@@ -9,6 +9,6 @@
 - [설정파일 암호화 로직 리팩토링으로 의존성 분리와 API 호출 최적화하기](https://nuheajiohc.tistory.com/43)
 - [DBCP2에서 HikariCP로 전환 과정](https://nuheajiohc.tistory.com/42)
 
-## 리팩토링 전 트러블 슈팅
+## 리팩토링 하기 전 트러블 슈팅
 - [Logback 설정 실수로 인해 로그가 출력되지 않은 문제 해결 과정](https://nuheajiohc.tistory.com/41)
 - [Maven 프로젝트에서 Lombok이 인식되지 않는 문제 해결](https://nuheajiohc.tistory.com/40)

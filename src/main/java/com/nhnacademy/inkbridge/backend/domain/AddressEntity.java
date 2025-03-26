@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "address")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class AddressEntity {
+public class AddressEntity extends BaseEntity {
 
 	@Id
 	@Column(name = "address_id")
@@ -31,6 +31,9 @@ public class AddressEntity {
 
 	@Column(name = "road_name")
 	private String roadName;
+
+	@Column(name = "address_detail")
+	private String addressDetail;
 
 	@Column(name = "zip_code")
 	private String zipCode;

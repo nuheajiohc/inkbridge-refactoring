@@ -1,4 +1,4 @@
-package com.nhnacademy.inkbridge.backend.domain;
+package com.nhnacademy.inkbridge.backend.storage.support;
 
 import java.time.LocalDateTime;
 

@@ -1,4 +1,4 @@
-package com.nhnacademy.inkbridge.backend.domain;
+package com.nhnacademy.inkbridge.backend.storage;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,12 +6,15 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.nhnacademy.inkbridge.backend.entity.Member;
+import com.nhnacademy.inkbridge.backend.storage.support.BaseEntity;
 
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -25,9 +28,6 @@ public class AddressEntity extends BaseEntity {
 	@Column(name = "address_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
-	@Column(name = "address_name")
-	private String addressName;
 
 	@Column(name = "road_name")
 	private String roadName;
@@ -48,6 +48,19 @@ public class AddressEntity extends BaseEntity {
 	private Boolean isDefault;
 
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "member_id", nullable = false)
 	private Member memberEntity;
 
+	@Builder
+	public AddressEntity(String roadName, String addressDetail, String zipCode, String receiverName,
+		String receiverPhone,
+		Boolean isDefault, Member memberEntity) {
+		this.roadName = roadName;
+		this.addressDetail = addressDetail;
+		this.zipCode = zipCode;
+		this.receiverName = receiverName;
+		this.receiverPhone = receiverPhone;
+		this.isDefault = isDefault;
+		this.memberEntity = memberEntity;
+	}
 }

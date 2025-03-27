@@ -18,4 +18,8 @@ public class ApiSuccessResponse<T> {
 	public static ApiSuccessResponse<Void> success(ResponseMessage message) {
 		return new ApiSuccessResponse<>(ResultStatus.SUCCESS, null, message);
 	}
+
+	public static <T> ApiSuccessResponse<T> success(T data, ResponseMessage message) {
+		return new ApiSuccessResponse<>(ResultStatus.SUCCESS, data, message);
+	}
 }

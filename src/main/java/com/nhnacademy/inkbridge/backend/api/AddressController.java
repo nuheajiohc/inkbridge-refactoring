@@ -1,8 +1,11 @@
 package com.nhnacademy.inkbridge.backend.api;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -11,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.nhnacademy.inkbridge.backend.api.support.ApiErrorResponse;
 import com.nhnacademy.inkbridge.backend.controller.header.HeaderConstants;
+import com.nhnacademy.inkbridge.backend.domain.Address;
 import com.nhnacademy.inkbridge.backend.domain.AddressService;
 import com.nhnacademy.inkbridge.backend.api.support.ApiSuccessResponse;
 import com.nhnacademy.inkbridge.backend.api.support.ResponseMessage;
@@ -24,6 +29,14 @@ import lombok.RequiredArgsConstructor;
 public class AddressController {
 
 	private final AddressService addressService;
+
+	@GetMapping
+	public ApiSuccessResponse<?> getAddresses(
+		@RequestHeader(HeaderConstants.MEMBER_ID_HEADER) Long userId){
+
+		List<Address> addresses = addressService.getAddresses(userId);
+		return ApiSuccessResponse.success(addresses, ResponseMessage.ADDRESS_READ_SUCCESS);
+	}
 
 	@PostMapping
 	public ApiSuccessResponse<Void> createAddress(

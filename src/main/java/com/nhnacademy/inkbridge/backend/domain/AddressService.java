@@ -1,5 +1,6 @@
 package com.nhnacademy.inkbridge.backend.domain;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
@@ -31,5 +32,13 @@ public class AddressService {
 		addressPolicyHandler.validateAddressMinLimit(userId);
 		addressPolicyHandler.validateDefaultAddress(addressId);
 		addressCommandHandler.delete(addressId);
+	}
+
+	public List<Address> getAddresses(Long userId) {
+		return addressRepository.findAllByUserId(userId);
+	}
+
+	public void getAddress(Long userId, Long addressId) {
+
 	}
 }

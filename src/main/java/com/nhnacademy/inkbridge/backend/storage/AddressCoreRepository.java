@@ -1,5 +1,6 @@
 package com.nhnacademy.inkbridge.backend.storage;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
@@ -60,5 +61,10 @@ public class AddressCoreRepository implements AddressRepository {
 	@Override
 	public void deleteById(Long addressId) {
 		addressJpaRepository.deleteById(addressId);
+	}
+
+	@Override
+	public List<Address> findAllByUserId(Long userId) {
+		return addressQuerydslRepository.findAllByUserId(userId);
 	}
 }

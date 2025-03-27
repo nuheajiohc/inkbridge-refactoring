@@ -1,5 +1,6 @@
 package com.nhnacademy.inkbridge.backend.domain;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface AddressRepository {
@@ -15,4 +16,6 @@ public interface AddressRepository {
 	Optional<Address> findByAddressId(Long id);
 
 	void deleteById(Long addressId);
+
+	List<Address> findAllByUserId(Long userId);
 }

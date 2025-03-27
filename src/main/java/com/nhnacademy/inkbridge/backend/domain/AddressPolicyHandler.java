@@ -8,18 +8,36 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class AddressPolicyHandler {
 
-	private final int ADDRESS_LIMIT = 10;
 	private final AddressRepository addressRepository;
 
-	void validateAddressLimit(Long userId) {
-		if (addressRepository.countAddressesByUserId(userId) == ADDRESS_LIMIT) {
+	public void validateAddressLimit(Long userId) {
+		if (addressRepository.countAddressesByUserId(userId) == Address.ADDRESS_LIMIT) {
 			throw new BusinessException(ErrorMessage.ADDRESS_LIMIT_EXCEEDED);
 		}
 	}
 
-	void unmarkDefaultAddress(Long userId, Address address) {
-		if(address.isDefault()){
+	public void processDefaultAddressOnCreate(Long userId, Address address) {
+		if (address.isDefault()) {
 			addressRepository.unmarkDefaultAddress(userId);
 		}
+	}
+
+	public void processDefaultAddressOnUpdate(Long userId, Address updated) {
+		Address oldAddress = addressRepository.findByAddressId(updated.getId())
+			.orElseThrow(() -> new BusinessException(ErrorMessage.ADDRESS_NOT_EXISTS));
+
+		if (updated.isSameDefaultStatus(oldAddress)) {
+			return;
+		}
+
+		if (updated.unmarkFromDefault(oldAddress)) {
+			updated.changeIsDefault(oldAddress.isDefault());
+			return;
+		}
+
+		if (updated.isChangedToDefault(oldAddress)) {
+			addressRepository.unmarkDefaultAddress(userId);
+		}
+
 	}
 }

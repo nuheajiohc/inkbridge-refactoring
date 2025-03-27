@@ -35,10 +35,12 @@ public class AddressService {
 		addressCommandHandler.delete(addressId);
 	}
 
+	@Transactional(readOnly = true)
 	public List<Address> getAddresses(Long userId) {
 		return addressRepository.findAllByUserId(userId);
 	}
 
+	@Transactional(readOnly = true)
 	public Address getAddress(Long addressId) {
 		return addressRepository.findByAddressId(addressId)
 			.orElseThrow(() -> new BusinessException(ErrorMessage.ADDRESS_NOT_EXISTS));

@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nhnacademy.inkbridge.backend.api.support.ApiErrorResponse;
 import com.nhnacademy.inkbridge.backend.controller.header.HeaderConstants;
 import com.nhnacademy.inkbridge.backend.domain.Address;
 import com.nhnacademy.inkbridge.backend.domain.AddressService;
@@ -36,6 +35,15 @@ public class AddressController {
 
 		List<Address> addresses = addressService.getAddresses(userId);
 		return ApiSuccessResponse.success(new AddressesResponse(addresses), ResponseMessage.ADDRESS_READ_SUCCESS);
+	}
+
+	@GetMapping("/{addressId}")
+	public ApiSuccessResponse<?> getAddress(
+		@RequestHeader(HeaderConstants.MEMBER_ID_HEADER) Long userId,
+		@PathVariable Long addressId){
+
+		Address address = addressService.getAddress(addressId);
+		return ApiSuccessResponse.success(address, ResponseMessage.ADDRESS_READ_SUCCESS);
 	}
 
 	@PostMapping

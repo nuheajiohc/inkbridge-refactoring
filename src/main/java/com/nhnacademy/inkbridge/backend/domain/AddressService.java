@@ -3,6 +3,7 @@ package com.nhnacademy.inkbridge.backend.domain;
 import java.util.List;
 import java.util.Optional;
 
+import org.apache.coyote.BadRequestException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -38,7 +39,8 @@ public class AddressService {
 		return addressRepository.findAllByUserId(userId);
 	}
 
-	public void getAddress(Long userId, Long addressId) {
-
+	public Address getAddress(Long addressId) {
+		return addressRepository.findByAddressId(addressId)
+			.orElseThrow(() -> new BusinessException(ErrorMessage.ADDRESS_NOT_EXISTS));
 	}
 }

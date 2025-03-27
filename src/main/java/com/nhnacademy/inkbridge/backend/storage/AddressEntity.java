@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.nhnacademy.inkbridge.backend.domain.Address;
 import com.nhnacademy.inkbridge.backend.entity.Member;
 import com.nhnacademy.inkbridge.backend.storage.support.BaseEntity;
 
@@ -62,5 +63,26 @@ public class AddressEntity extends BaseEntity {
 		this.receiverPhone = receiverPhone;
 		this.isDefault = isDefault;
 		this.memberEntity = memberEntity;
+	}
+
+	public Address toAddress(){
+		return Address.builder()
+			.id(this.id)
+			.roadName(this.roadName)
+			.addressDetail(this.addressDetail)
+			.zipCode(this.zipCode)
+			.receiverName(this.receiverName)
+			.receiverPhone(this.receiverPhone)
+			.isDefault(this.isDefault)
+			.build();
+	}
+
+	public void update(Address address) {
+		this.roadName = address.getRoadName();
+		this.addressDetail = address.getAddressDetail();
+		this.zipCode = address.getZipCode();
+		this.receiverName = address.getReceiverName();
+		this.receiverPhone = address.getReceiverPhone();
+		this.isDefault = address.isDefault();
 	}
 }

@@ -43,7 +43,7 @@ public class AddressController {
 		@PathVariable Long addressId){
 
 		Address address = addressService.getAddress(addressId);
-		return ApiSuccessResponse.success(address, ResponseMessage.ADDRESS_READ_SUCCESS);
+		return ApiSuccessResponse.success(AddressResponse.from(address), ResponseMessage.ADDRESS_READ_SUCCESS);
 	}
 
 	@PostMapping

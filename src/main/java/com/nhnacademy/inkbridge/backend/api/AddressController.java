@@ -31,11 +31,11 @@ public class AddressController {
 	private final AddressService addressService;
 
 	@GetMapping
-	public ApiSuccessResponse<?> getAddresses(
+	public ApiSuccessResponse<AddressesResponse> getAddresses(
 		@RequestHeader(HeaderConstants.MEMBER_ID_HEADER) Long userId){
 
 		List<Address> addresses = addressService.getAddresses(userId);
-		return ApiSuccessResponse.success(addresses, ResponseMessage.ADDRESS_READ_SUCCESS);
+		return ApiSuccessResponse.success(new AddressesResponse(addresses), ResponseMessage.ADDRESS_READ_SUCCESS);
 	}
 
 	@PostMapping

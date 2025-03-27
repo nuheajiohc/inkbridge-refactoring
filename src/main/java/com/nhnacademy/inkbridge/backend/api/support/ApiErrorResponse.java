@@ -3,17 +3,17 @@ package com.nhnacademy.inkbridge.backend.api.support;
 import lombok.Getter;
 
 @Getter
-public class ApiErrorResponse {
+public class ApiErrorResponse<T> {
 
 	private final ResultStatus status;
-	private final String message;
+	private final T message;
 
-	public ApiErrorResponse(ResultStatus status, String message) {
+	public ApiErrorResponse(ResultStatus status, T message) {
 		this.status = status;
 		this.message = message;
 	}
 
-	public static ApiErrorResponse error(String message) {
-		return new ApiErrorResponse(ResultStatus.ERROR, message);
+	public static <T> ApiErrorResponse<T> error(T message) {
+		return new ApiErrorResponse<>(ResultStatus.ERROR, message);
 	}
 }

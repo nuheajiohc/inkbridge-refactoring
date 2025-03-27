@@ -40,12 +40,12 @@ public class GlobalControllerAdvice {
         return new ResponseEntity<>(new ApiError(e.getMessage()), HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
-    @ExceptionHandler({MethodArgumentNotValidException.class})
-    public ResponseEntity<ApiError> handleValidationException(MethodArgumentNotValidException e) {
-        List<String> result = e.getBindingResult().getAllErrors().stream()
-            .map(DefaultMessageSourceResolvable::getDefaultMessage).collect(Collectors.toList());
-        return new ResponseEntity<>(new ApiError(result.toString()), HttpStatus.BAD_REQUEST);
-    }
+    // @ExceptionHandler({MethodArgumentNotValidException.class})
+    // public ResponseEntity<ApiError> handleValidationException(MethodArgumentNotValidException e) {
+    //     List<String> result = e.getBindingResult().getAllErrors().stream()
+    //         .map(DefaultMessageSourceResolvable::getDefaultMessage).collect(Collectors.toList());
+    //     return new ResponseEntity<>(new ApiError(result.toString()), HttpStatus.BAD_REQUEST);
+    // }
 
     @ExceptionHandler({ConflictException.class})
     public ResponseEntity<ConflictError> handleConflictException(Exception e) {

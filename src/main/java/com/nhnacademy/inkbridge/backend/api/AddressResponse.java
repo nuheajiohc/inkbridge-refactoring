@@ -39,6 +39,4 @@ public class AddressResponse {
 			.isDefault(address.isDefault())
 			.build();
 	}
-
-
 }

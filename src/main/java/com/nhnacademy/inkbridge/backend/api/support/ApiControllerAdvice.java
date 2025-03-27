@@ -27,7 +27,7 @@ public class ApiControllerAdvice {
 			.collect(Collectors.toMap(
 				FieldError::getField,
 				FieldError::getDefaultMessage,
-				(existing, next) -> existing // 필드가 중복될 경우 첫 번째 메시지를 사용
+				(existing, next) -> existing
 			));
 
 		return ApiErrorResponse.error(errors);

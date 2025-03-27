@@ -2,6 +2,8 @@ package com.nhnacademy.inkbridge.backend.api;
 
 import javax.validation.Valid;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -36,7 +38,17 @@ public class AddressController {
 	public ApiSuccessResponse<Void> updateAddress(
 		@RequestHeader(HeaderConstants.MEMBER_ID_HEADER) Long userId,
 		@Valid @RequestBody AddressUpdateRequest request){
+
 		addressService.updateAddress(userId, request.toAddress());
 		return ApiSuccessResponse.success(ResponseMessage.ADDRESS_UPDATED);
+	}
+
+	@DeleteMapping("/{addressId}")
+	public ApiSuccessResponse<Void> deleteAddress(
+		@RequestHeader(HeaderConstants.MEMBER_ID_HEADER) Long userId,
+		@PathVariable Long addressId){
+
+		addressService.deleteAddress(userId, addressId);
+		return ApiSuccessResponse.success(ResponseMessage.ADDRESS_DELETED);
 	}
 }

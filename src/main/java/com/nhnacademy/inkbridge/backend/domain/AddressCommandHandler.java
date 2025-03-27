@@ -17,4 +17,8 @@ public class AddressCommandHandler {
 	public void update(Address address) {
 		addressRepository.update(address);
 	}
+
+	public void delete(Long addressId) {
+		addressRepository.deleteById(addressId);
+	}
 }

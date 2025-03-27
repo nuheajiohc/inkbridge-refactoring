@@ -6,7 +6,8 @@ import lombok.Getter;
 @Getter
 public class Address {
 
-	public static int ADDRESS_LIMIT = 10;
+	public static int MAX_LIMIT = 10;
+	public static int MIN_LIMIT = 1;
 
 	private Long id;
 	private String receiverName;
@@ -17,7 +18,8 @@ public class Address {
 	private Boolean isDefault;
 
 	@Builder
-	public Address(Long id, String receiverName, String receiverPhone, String roadName, String addressDetail, String zipCode,
+	public Address(Long id, String receiverName, String receiverPhone, String roadName, String addressDetail,
+		String zipCode,
 		Boolean isDefault) {
 		this.id = id;
 		this.receiverName = receiverName;
@@ -28,23 +30,31 @@ public class Address {
 		this.isDefault = isDefault;
 	}
 
-	public boolean isDefault(){
+	public static boolean isMaxLimit(long count) {
+		return count == MAX_LIMIT;
+	}
+
+	public static boolean isMinLimit(long count) {
+		return count == MIN_LIMIT;
+	}
+
+	public boolean isDefault() {
 		return isDefault;
 	}
 
-	public void changeIsDefault(Boolean isDefault){
+	public void changeIsDefault(Boolean isDefault) {
 		this.isDefault = isDefault;
 	}
 
-	public boolean isSameDefaultStatus(Address before){
+	public boolean isSameDefaultStatus(Address before) {
 		return this.isDefault == before.isDefault;
 	}
 
-	public boolean isChangedToDefault(Address before){
+	public boolean isChangedToDefault(Address before) {
 		return this.isDefault && !before.isDefault;
 	}
 
-	public boolean unmarkFromDefault(Address before){
+	public boolean unmarkFromDefault(Address before) {
 		return !this.isDefault && before.isDefault;
 	}
 }

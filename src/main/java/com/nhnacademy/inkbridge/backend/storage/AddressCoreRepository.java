@@ -56,4 +56,9 @@ public class AddressCoreRepository implements AddressRepository {
 			.orElseThrow(() -> new BusinessException(ErrorMessage.ADDRESS_NOT_EXISTS));
 		addressEntity.update(address);
 	}
+
+	@Override
+	public void deleteById(Long addressId) {
+		addressJpaRepository.deleteById(addressId);
+	}
 }

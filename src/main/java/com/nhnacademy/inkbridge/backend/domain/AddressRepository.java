@@ -13,4 +13,6 @@ public interface AddressRepository {
 	void update(Address address);
 
 	Optional<Address> findByAddressId(Long id);
+
+	void deleteById(Long addressId);
 }

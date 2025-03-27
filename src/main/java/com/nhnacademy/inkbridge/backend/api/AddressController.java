@@ -39,12 +39,12 @@ public class AddressController {
 	}
 
 	@PostMapping
-	public ApiSuccessResponse<Void> createAddress(
+	public ApiSuccessResponse<AddressCreateResponse> createAddress(
 		@RequestHeader(HeaderConstants.MEMBER_ID_HEADER) Long userId,
 		@Valid @RequestBody AddressCreateRequest request) {
 
-		addressService.createAddress(userId, request.toAddress());
-		return ApiSuccessResponse.success(ResponseMessage.ADDRESS_CREATED);
+		Long addressId = addressService.createAddress(userId, request.toAddress());
+		return ApiSuccessResponse.success(new AddressCreateResponse(addressId), ResponseMessage.ADDRESS_CREATED);
 	}
 
 	@PutMapping

@@ -17,10 +17,10 @@ public class AddressService {
 	private final AddressCommandHandler addressCommandHandler;
 	private final AddressRepository addressRepository;
 
-	public void createAddress(Long userId, Address address) {
+	public Long createAddress(Long userId, Address address) {
 		addressPolicyHandler.validateAddressMaxLimit(userId);
 		addressPolicyHandler.processDefaultAddressOnCreate(userId, address);
-		addressCommandHandler.save(userId, address);
+		return addressCommandHandler.save(userId, address);
 	}
 
 	public void updateAddress(Long userId, Address address) {

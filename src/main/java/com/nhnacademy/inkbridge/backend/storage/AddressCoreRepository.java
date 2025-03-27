@@ -22,8 +22,8 @@ public class AddressCoreRepository implements AddressRepository {
 	private final AddressQuerydslRepository addressQuerydslRepository;
 
 	@Override
-	public void save(Long userId, Address address) {
-		addressJpaRepository.save(
+	public Long save(Long userId, Address address) {
+		AddressEntity save = addressJpaRepository.save(
 			AddressEntity.builder()
 				.roadName(address.getRoadName())
 				.addressDetail(address.getAddressDetail())
@@ -34,6 +34,7 @@ public class AddressCoreRepository implements AddressRepository {
 				.memberEntity(memberRepository.getReferenceById(userId))
 				.build()
 		);
+		return save.getId();
 	}
 
 	@Override

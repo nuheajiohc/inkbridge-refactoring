@@ -5,7 +5,7 @@ import java.util.Optional;
 
 public interface AddressRepository {
 
-	void save(Long userId, Address address);
+	Long save(Long userId, Address address);
 
 	void unmarkDefaultAddress(Long userId);
 

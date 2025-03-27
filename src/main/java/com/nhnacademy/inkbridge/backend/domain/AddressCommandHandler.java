@@ -10,8 +10,8 @@ public class AddressCommandHandler {
 
 	private final AddressRepository addressRepository;
 
-	public void save(Long userId,Address address) {
-		addressRepository.save(userId, address);
+	public Long save(Long userId,Address address) {
+		return addressRepository.save(userId, address);
 	}
 
 	public void update(Address address) {

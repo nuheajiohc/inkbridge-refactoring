@@ -1,0 +1,33 @@
+# mysql
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/inkbridge
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        highlight_sql: true
+        use_sql_comments: true
+
+eureka:
+  client:
+    enabled: false
+management:
+  health:
+    elasticsearch:
+      enabled: false
+
+#object-storage.container-name=3fb2bb76e6d34a33ab34b98eb7ae5bf2
+#object-storage.auth-url=b0803cce8aee491f8d032b11b4797b31
+#object-storage.password=22ad62d9d0c84cee8f94ac77f668a21c
+#object-storage.storage-url=cce5f7d783d4470db55aed21ecc59b3f
+#object-storage.tenant-id=8dec5c55cabd444280d3e0a848d58096
+#object-storage.username=2c4388e0302948ff9674ed5e589eb691
+

@@ -5,9 +5,9 @@ import lombok.Getter;
 @Getter
 public class ApiSuccessResponse<T> {
 
-	private ResultStatus status;
-	private T data;
-	private String message;
+	private final ResultStatus status;
+	private final T data;
+	private final String message;
 
 	public ApiSuccessResponse(ResultStatus status, T data, ResponseMessage message) {
 		this.status = status;

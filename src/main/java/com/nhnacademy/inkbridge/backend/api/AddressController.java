@@ -38,9 +38,7 @@ public class AddressController {
 	}
 
 	@GetMapping("/{addressId}")
-	public ApiSuccessResponse<?> getAddress(
-		@RequestHeader(HeaderConstants.MEMBER_ID_HEADER) Long userId,
-		@PathVariable Long addressId){
+	public ApiSuccessResponse<?> getAddress(@PathVariable Long addressId){
 
 		Address address = addressService.getAddress(addressId);
 		return ApiSuccessResponse.success(AddressResponse.from(address), ResponseMessage.ADDRESS_READ_SUCCESS);

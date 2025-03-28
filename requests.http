@@ -28,7 +28,7 @@ Content-Type: application/json
 }
 
 ### 주소 삭제
-DELETE http://localhost:8080/api/my/addresses/21
+DELETE http://localhost:8080/api/my/addresses/22
 Authorization-Id: 1
 
 ### 주소록 조회

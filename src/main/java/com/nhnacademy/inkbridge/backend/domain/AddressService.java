@@ -1,17 +1,15 @@
 package com.nhnacademy.inkbridge.backend.domain;
 
 import java.util.List;
-import java.util.Optional;
 
-import org.apache.coyote.BadRequestException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import lombok.RequiredArgsConstructor;
 
 @Service
-@RequiredArgsConstructor
 @Transactional
+@RequiredArgsConstructor
 public class AddressService {
 
 	private final AddressPolicyHandler addressPolicyHandler;

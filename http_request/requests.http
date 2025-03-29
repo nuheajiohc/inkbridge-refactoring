@@ -39,3 +39,7 @@ Authorization-Id: 1
 GET http://localhost:8080/api/my/addresses/22
 Authorization-Id: 1
 
+
+### 멤버 등급 목록 조회
+GET http://localhost:8080/api/my/grades
+Authorization-Id: 1

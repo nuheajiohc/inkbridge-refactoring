@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.nhnacademy.inkbridge.backend.domain.AccountRole;
+import com.nhnacademy.inkbridge.backend.domain.AccountStatus;
 import com.nhnacademy.inkbridge.backend.domain.BusinessException;
 import com.nhnacademy.inkbridge.backend.domain.ErrorMessage;
 
@@ -22,6 +23,7 @@ public class AdminAccountService {
 
 	public void create(Admin admin) {
 		admin.setRole(AccountRole.SUB_ADMIN);
+		admin.setStatus(AccountStatus.ACTIVE);
 		admin.setEncodePassword(passwordEncoder.encode(admin.getPassword()));
 		adminAccountRepository.save(admin);
 	}
@@ -33,5 +35,9 @@ public class AdminAccountService {
 
 		admin.setEncodePassword(passwordEncoder.encode(admin.getPassword()));
 		adminAccountRepository.update(admin);
+	}
+
+	public void delete(Integer loginId) {
+		adminAccountRepository.delete(loginId);
 	}
 }

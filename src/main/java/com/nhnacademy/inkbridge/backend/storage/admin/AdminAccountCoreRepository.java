@@ -23,6 +23,7 @@ public class AdminAccountCoreRepository implements AdminAccountRepository {
 				.password(admin.getPassword())
 				.email(admin.getEmail())
 				.accountRole(admin.getRole())
+				.accountStatus(admin.getStatus())
 				.build());
 	}
 
@@ -31,5 +32,12 @@ public class AdminAccountCoreRepository implements AdminAccountRepository {
 		AdminEntity adminEntity = adminAccountJpaRepository.findById(admin.getId())
 			.orElseThrow(() -> new BusinessException(ErrorMessage.ACCOUNT_NOT_EXISTS));
 		adminEntity.update(admin);
+	}
+
+	@Override
+	public void delete(Integer loginId) {
+		AdminEntity adminEntity = adminAccountJpaRepository.findById(loginId)
+			.orElseThrow(() -> new BusinessException(ErrorMessage.ACCOUNT_NOT_EXISTS));
+		adminEntity.delete();
 	}
 }

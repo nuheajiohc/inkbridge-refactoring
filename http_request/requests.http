@@ -43,3 +43,15 @@ Authorization-Id: 1
 ### 멤버 등급 목록 조회
 GET http://localhost:8080/api/my/grades
 Authorization-Id: 1
+
+
+### 관리자 생성
+POST http://localhost:8080/api/admins
+Content-Type: application/json
+
+{
+  "name": "jaehun",
+  "email": "3831568@naverc.com",
+  "password": "jaehun1234"
+}
+

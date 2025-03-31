@@ -40,7 +40,8 @@ public class AddressQuerydslRepository {
 				addressEntity.roadName,
 				addressEntity.addressDetail,
 				addressEntity.zipCode,
-				addressEntity.isDefault
+				addressEntity.isDefault,
+				addressEntity.memberEntity.memberId
 			))
 			.from(addressEntity)
 			.where(addressEntity.memberEntity.memberId.eq(userId))

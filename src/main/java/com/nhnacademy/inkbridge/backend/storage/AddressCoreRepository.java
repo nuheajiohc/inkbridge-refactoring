@@ -54,7 +54,7 @@ public class AddressCoreRepository implements AddressRepository {
 
 	@Override
 	public void update(Address address) {
-		AddressEntity addressEntity = addressJpaRepository.findById(address.getId())
+		AddressEntity addressEntity = addressJpaRepository.findById(address.getAddressId())
 			.orElseThrow(() -> new BusinessException(ErrorMessage.ADDRESS_NOT_EXISTS));
 		addressEntity.update(address);
 	}

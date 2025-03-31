@@ -67,13 +67,14 @@ public class AddressEntity extends BaseEntity {
 
 	public Address toAddress(){
 		return Address.builder()
-			.id(this.id)
+			.addressId(this.id)
 			.roadName(this.roadName)
 			.addressDetail(this.addressDetail)
 			.zipCode(this.zipCode)
 			.receiverName(this.receiverName)
 			.receiverPhone(this.receiverPhone)
 			.isDefault(this.isDefault)
+			.memberId(this.memberEntity.getMemberId())
 			.build();
 	}
 

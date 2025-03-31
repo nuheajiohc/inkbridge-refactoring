@@ -1,10 +1,14 @@
 package com.nhnacademy.inkbridge.backend.domain.admin;
 
+import java.util.Objects;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.nhnacademy.inkbridge.backend.domain.AccountRole;
+import com.nhnacademy.inkbridge.backend.domain.BusinessException;
+import com.nhnacademy.inkbridge.backend.domain.ErrorMessage;
 
 import lombok.RequiredArgsConstructor;
 
@@ -22,7 +26,11 @@ public class AdminAccountService {
 		adminAccountRepository.save(admin);
 	}
 
-	public void update(Admin admin) {
+	public void update(Integer loginId, Admin admin) {
+		if(!Objects.equals(loginId, admin.getId())){
+			throw new BusinessException(ErrorMessage.ACCOUNT_UPDATE_FORBIDDEN);
+		}
+
 		admin.setEncodePassword(passwordEncoder.encode(admin.getPassword()));
 		adminAccountRepository.update(admin);
 	}

@@ -8,16 +8,19 @@ import lombok.Getter;
 @Getter
 public class Admin {
 
+	private Integer id;
 	private String name;
 	private String password;
 	private String email;
 	private AccountRole role;
 
 	@Builder
-	public Admin(String name, String password, String email) {
+	public Admin(Integer id, String name, String password, String email, AccountRole role) {
+		this.id = id;
 		this.name = name;
 		this.password = password;
 		this.email = email;
+		this.role = role;
 	}
 
 	public void setRole(AccountRole role) {

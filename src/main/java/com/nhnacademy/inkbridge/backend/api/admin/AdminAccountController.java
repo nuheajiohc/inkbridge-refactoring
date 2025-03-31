@@ -2,7 +2,9 @@ package com.nhnacademy.inkbridge.backend.api.admin;
 
 import javax.validation.Valid;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,14 +17,22 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/admins")
+@RequestMapping("/api/admin")
 public class AdminAccountController {
 
 	private final AdminAccountService adminAccountService;
 
-	@PostMapping
-	public ApiSuccessResponse<?> createAdminAccount(@Valid @RequestBody AdminAccountCreateRequest request){
+	@PostMapping("/accounts")
+	public ApiSuccessResponse<?> createAdminAccount(@Valid @RequestBody AdminAccountCreateRequest request) {
 		adminAccountService.create(request.toAdmin());
 		return ApiSuccessResponse.success(ResponseMessage.ADMIN_ACCOUNT_CREATED);
+	}
+
+	@PutMapping("/accounts")
+	public ApiSuccessResponse<?> updateAdminAccount(
+		@Valid @RequestBody AdminAccountUpdateRequest request) {
+
+		adminAccountService.update(request.toAdmin());
+		return ApiSuccessResponse.success(ResponseMessage.ADMIN_ACCOUNT_UPDATED);
 	}
 }

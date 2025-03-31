@@ -21,4 +21,9 @@ public class AdminAccountService {
 		admin.setEncodePassword(passwordEncoder.encode(admin.getPassword()));
 		adminAccountRepository.save(admin);
 	}
+
+	public void update(Admin admin) {
+		admin.setEncodePassword(passwordEncoder.encode(admin.getPassword()));
+		adminAccountRepository.update(admin);
+	}
 }

@@ -12,6 +12,7 @@ import javax.persistence.Table;
 import org.joda.time.DateTime;
 
 import com.nhnacademy.inkbridge.backend.domain.AccountRole;
+import com.nhnacademy.inkbridge.backend.domain.admin.Admin;
 import com.nhnacademy.inkbridge.backend.storage.support.BaseEntity;
 
 import lombok.AccessLevel;
@@ -47,5 +48,11 @@ public class AdminEntity extends BaseEntity {
 		this.password = password;
 		this.name = name;
 		this.accountRole = accountRole;
+	}
+
+	public void update(Admin admin){
+		this.email = admin.getEmail();
+		this.password = admin.getPassword();
+		this.name = admin.getName();
 	}
 }

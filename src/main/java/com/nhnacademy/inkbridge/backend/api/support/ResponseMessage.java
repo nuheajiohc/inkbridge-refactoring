@@ -15,7 +15,8 @@ public enum ResponseMessage {
 	GRADE_READ_SUCCESS("회원등급 조회 성공하였습니다."),
 
 	// 관리자
-	ADMIN_ACCOUNT_CREATED("관리자 계정 생성완료했습니다.");
+	ADMIN_ACCOUNT_CREATED("관리자 계정 생성완료했습니다."),
+	ADMIN_ACCOUNT_UPDATED("관리자 계정 수정완료되었습니다.");
 
 	private final String text;
 

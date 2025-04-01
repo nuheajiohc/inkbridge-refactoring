@@ -12,7 +12,11 @@ public enum ErrorMessage {
 
 
 	ACCOUNT_NOT_EXISTS("계정이 존재하지 않습니다."),
-	ACCOUNT_UPDATE_FORBIDDEN("계정 업데이트를 할 수 없습니다.");
+	ACCOUNT_UPDATE_FORBIDDEN("계정 업데이트를 할 수 없습니다."),
+
+	DATE_FORMAT_NOT_SUPPORTED("지원하지 않는 날짜 형식입니다."),
+
+	GRADE_NOT_EXISTS("등급이 존재하지 않습니다.");
 
 	private final String text;
 

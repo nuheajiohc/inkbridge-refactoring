@@ -1,4 +1,4 @@
-package com.nhnacademy.inkbridge.backend.api.admin;
+package com.nhnacademy.inkbridge.backend.api.support;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

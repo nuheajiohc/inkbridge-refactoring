@@ -1,6 +1,7 @@
 package com.nhnacademy.inkbridge.backend.storage;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Repository;
@@ -22,5 +23,11 @@ public class GradeCoreRepository implements GradeRepository {
 		return gradeEntities.stream()
 			.map(GradeEntity::toGrade)
 			.collect(Collectors.toList());
+	}
+
+	@Override
+	public Optional<Grade> findByDefaultGrade() {
+		Optional<GradeEntity> gradeEntity =gradeJpaRepository.findByName("STANDARD");
+		return gradeEntity.map(GradeEntity::toGrade);
 	}
 }

@@ -26,4 +26,9 @@ public class MemberAccountService {
 		memberAccountRepository.save(member);
 
 	}
+
+	public void update(Integer loginId, Member member) {
+		member.setEncodePassword(passwordEncoder.encode(member.getPassword()));
+		memberAccountRepository.update(loginId, member);
+	}
 }

@@ -2,6 +2,8 @@ package com.nhnacademy.inkbridge.backend.storage;
 
 import org.springframework.stereotype.Repository;
 
+import com.nhnacademy.inkbridge.backend.domain.BusinessException;
+import com.nhnacademy.inkbridge.backend.domain.ErrorMessage;
 import com.nhnacademy.inkbridge.backend.domain.Member;
 import com.nhnacademy.inkbridge.backend.domain.MemberAccountRepository;
 
@@ -28,5 +30,12 @@ public class MemberAccountCoreRepository implements MemberAccountRepository {
 				.totalPoint(member.getTotalPoint())
 				.build()
 		);
+	}
+
+	@Override
+	public void update(Integer loginId, Member member) {
+		MemberEntity memberEntity = memberAccountJpaRepository.findById(loginId)
+			.orElseThrow(() -> new BusinessException(ErrorMessage.ACCOUNT_NOT_EXISTS));
+		memberEntity.update(member);
 	}
 }

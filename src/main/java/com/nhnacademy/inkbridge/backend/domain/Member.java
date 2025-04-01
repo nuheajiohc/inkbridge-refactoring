@@ -23,7 +23,6 @@ public class Member {
 	@Setter
 	private Grade grade;
 
-
 	@Builder
 	public Member(String name, String email, String password, String phoneNumber, String birth, Integer totalPoint,
 		AccountRole role, AccountStatus status, Grade grade) {
@@ -31,14 +30,14 @@ public class Member {
 		this.email = email;
 		this.password = password;
 		this.phoneNumber = phoneNumber;
-		this.birth = Birth.from(birth);
+		this.birth = birth == null ? null : Birth.from(birth);
 		this.totalPoint = totalPoint;
 		this.role = role;
 		this.status = status;
 		this.grade = grade;
 	}
 
-	public LocalDate getBirth(){
+	public LocalDate getBirth() {
 		return birth.getValue();
 	}
 

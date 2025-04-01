@@ -17,6 +17,7 @@ import javax.persistence.Table;
 
 
 import com.nhnacademy.inkbridge.backend.domain.AccountStatus;
+import com.nhnacademy.inkbridge.backend.domain.Member;
 import com.nhnacademy.inkbridge.backend.storage.support.BaseEntity;
 
 import lombok.AccessLevel;
@@ -66,5 +67,11 @@ public class MemberEntity extends BaseEntity {
 		this.totalPoint = totalPoint;
 		this.accountStatus = accountStatus;
 		this.gradeEntity = gradeEntity;
+	}
+
+	public void update(Member member) {
+		this.password = member.getPassword();
+		this.name = member.getName();
+		this.phoneNumber = member.getPhoneNumber();
 	}
 }

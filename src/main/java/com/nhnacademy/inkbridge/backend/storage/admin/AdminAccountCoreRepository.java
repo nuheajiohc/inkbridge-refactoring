@@ -28,8 +28,8 @@ public class AdminAccountCoreRepository implements AdminAccountRepository {
 	}
 
 	@Override
-	public void update(Admin admin) {
-		AdminEntity adminEntity = adminAccountJpaRepository.findById(admin.getId())
+	public void update(Integer adminId, Admin admin) {
+		AdminEntity adminEntity = adminAccountJpaRepository.findById(adminId)
 			.orElseThrow(() -> new BusinessException(ErrorMessage.ACCOUNT_NOT_EXISTS));
 		adminEntity.update(admin);
 	}

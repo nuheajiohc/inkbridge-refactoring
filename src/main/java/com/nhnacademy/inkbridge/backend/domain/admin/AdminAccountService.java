@@ -29,12 +29,8 @@ public class AdminAccountService {
 	}
 
 	public void update(Integer loginId, Admin admin) {
-		if(!Objects.equals(loginId, admin.getId())){
-			throw new BusinessException(ErrorMessage.ACCOUNT_UPDATE_FORBIDDEN);
-		}
-
 		admin.setEncodePassword(passwordEncoder.encode(admin.getPassword()));
-		adminAccountRepository.update(admin);
+		adminAccountRepository.update(loginId, admin);
 	}
 
 	public void delete(Integer loginId) {

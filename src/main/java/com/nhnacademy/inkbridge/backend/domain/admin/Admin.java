@@ -10,7 +10,6 @@ import lombok.Setter;
 @Getter
 public class Admin {
 
-	private Integer id;
 	private String name;
 	private String password;
 	private String email;
@@ -20,8 +19,7 @@ public class Admin {
 	private AccountStatus status;
 
 	@Builder
-	public Admin(Integer id, String name, String password, String email, AccountRole role, AccountStatus status) {
-		this.id = id;
+	public Admin(String name, String password, String email, AccountRole role, AccountStatus status) {
 		this.name = name;
 		this.password = password;
 		this.email = email;

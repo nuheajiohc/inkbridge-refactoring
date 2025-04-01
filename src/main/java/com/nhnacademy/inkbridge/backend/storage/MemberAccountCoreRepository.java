@@ -38,4 +38,11 @@ public class MemberAccountCoreRepository implements MemberAccountRepository {
 			.orElseThrow(() -> new BusinessException(ErrorMessage.ACCOUNT_NOT_EXISTS));
 		memberEntity.update(member);
 	}
+
+	@Override
+	public void delete(Integer loginId) {
+		MemberEntity memberEntity = memberAccountJpaRepository.findById(loginId)
+			.orElseThrow(() -> new BusinessException(ErrorMessage.ACCOUNT_NOT_EXISTS));
+		memberEntity.delete();
+	}
 }

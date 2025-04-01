@@ -74,4 +74,8 @@ public class MemberEntity extends BaseEntity {
 		this.name = member.getName();
 		this.phoneNumber = member.getPhoneNumber();
 	}
+
+	public void delete() {
+		accountStatus = AccountStatus.DELETED;
+	}
 }

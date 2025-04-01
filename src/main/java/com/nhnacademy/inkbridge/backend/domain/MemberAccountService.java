@@ -31,4 +31,8 @@ public class MemberAccountService {
 		member.setEncodePassword(passwordEncoder.encode(member.getPassword()));
 		memberAccountRepository.update(loginId, member);
 	}
+
+	public void delete(Integer loginId) {
+		memberAccountRepository.delete(loginId);
+	}
 }

@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
  * @version 2/8/24
  */
 @Entity
-@Table(name = "member")
+@Table(name = "members")
 @NoArgsConstructor
 @Getter
 public class Member {

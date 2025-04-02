@@ -9,7 +9,6 @@ import com.nhnacademy.inkbridge.backend.domain.Address;
 import com.nhnacademy.inkbridge.backend.domain.AddressRepository;
 import com.nhnacademy.inkbridge.backend.domain.BusinessException;
 import com.nhnacademy.inkbridge.backend.domain.ErrorMessage;
-import com.nhnacademy.inkbridge.backend.repository.MemberRepository;
 
 import lombok.RequiredArgsConstructor;
 

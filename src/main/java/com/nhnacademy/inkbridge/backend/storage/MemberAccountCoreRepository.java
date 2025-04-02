@@ -35,14 +35,14 @@ public class MemberAccountCoreRepository implements MemberAccountRepository {
 	}
 
 	@Override
-	public void update(Integer loginId, EssentialAccountInfo essentialAccountInfo, ProfileInfo profileInfo) {
+	public void update(Long loginId, EssentialAccountInfo essentialAccountInfo, ProfileInfo profileInfo) {
 		MemberEntity memberEntity = memberAccountJpaRepository.findById(loginId)
 			.orElseThrow(() -> new BusinessException(ErrorMessage.ACCOUNT_NOT_EXISTS));
 		memberEntity.update(essentialAccountInfo, profileInfo);
 	}
 
 	@Override
-	public void delete(Integer loginId) {
+	public void delete(Long loginId) {
 		MemberEntity memberEntity = memberAccountJpaRepository.findById(loginId)
 			.orElseThrow(() -> new BusinessException(ErrorMessage.ACCOUNT_NOT_EXISTS));
 		memberEntity.delete();

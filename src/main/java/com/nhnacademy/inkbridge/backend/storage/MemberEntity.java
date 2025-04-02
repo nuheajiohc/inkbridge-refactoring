@@ -18,7 +18,6 @@ import javax.persistence.Table;
 
 import com.nhnacademy.inkbridge.backend.domain.AccountStatus;
 import com.nhnacademy.inkbridge.backend.domain.EssentialAccountInfo;
-import com.nhnacademy.inkbridge.backend.domain.Member;
 import com.nhnacademy.inkbridge.backend.domain.ProfileInfo;
 import com.nhnacademy.inkbridge.backend.storage.support.BaseEntity;
 
@@ -36,7 +35,7 @@ public class MemberEntity extends BaseEntity {
 	@Id
 	@Column(name = "member_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
 	@Column(name = "email")
 	private String email;
 	@Column(name = "password")

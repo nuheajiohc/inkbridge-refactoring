@@ -32,7 +32,7 @@ public class MemberAccountController {
 
 	@PutMapping
 	public ApiSuccessResponse<Void> updateMemberAccount(
-		@RequestHeader(HeaderConstants.MEMBER_ID_HEADER) Integer loginId,
+		@RequestHeader(HeaderConstants.MEMBER_ID_HEADER) Long loginId,
 		@Valid @RequestBody MemberAccountUpdateRequest request){
 
 		memberAccountService.update(loginId, request.toEssentialAccountInfo(), request.toProfileInfo());
@@ -40,7 +40,7 @@ public class MemberAccountController {
 	}
 
 	@DeleteMapping
-	public ApiSuccessResponse<Void> deleteMemberAccount(@RequestHeader(HeaderConstants.MEMBER_ID_HEADER) Integer loginId){
+	public ApiSuccessResponse<Void> deleteMemberAccount(@RequestHeader(HeaderConstants.MEMBER_ID_HEADER) Long loginId){
 		memberAccountService.delete(loginId);
 		return ApiSuccessResponse.success(ResponseMessage.ACCOUNT_DELETED);
 	}

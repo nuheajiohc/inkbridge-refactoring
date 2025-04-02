@@ -18,12 +18,12 @@ public class MemberAccountCommandHandler {
 		memberAccountRepository.save(member);
 	}
 
-	public void update(Integer loginId, EssentialAccountInfo essentialInfo, ProfileInfo profileInfo) {
+	public void update(Long loginId, EssentialAccountInfo essentialInfo, ProfileInfo profileInfo) {
 		String encodedPassword = passwordEncoder.encode(essentialInfo.getPassword());
 		memberAccountRepository.update(loginId, new EssentialAccountInfo(essentialInfo.getEmail(), encodedPassword), profileInfo);
 	}
 
-	public void delete(Integer loginId) {
+	public void delete(Long loginId) {
 		memberAccountRepository.delete(loginId);
 	}
 }

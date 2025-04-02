@@ -4,7 +4,7 @@ Authorization-Id: 1
 Content-Type: application/json
 
 {
-  "receiverName": "최재훈6",
+  "receiverName": "최재훈7",
   "receiverPhone": "010-1234-5678",
   "roadName": "서울특별시 강남구 테헤란로 123",
   "addressDetail": "101동 202호",
@@ -18,8 +18,8 @@ Authorization-Id: 1
 Content-Type: application/json
 
 {
-  "id": 27,
-  "receiverName": "최재훈16",
+  "id": 23,
+  "receiverName": "최재훈23",
   "receiverPhone": "010-1234-5678",
   "roadName": "서울특별시 강남구 테헤란로 124",
   "addressDetail": "101동 202호",

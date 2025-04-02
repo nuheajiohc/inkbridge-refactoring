@@ -19,11 +19,11 @@ public class MemberAccountService {
 		accountCommandHandler.create(essentialInfo, profileInfo, grade);
 	}
 
-	public void update(Integer loginId, EssentialAccountInfo essentialInfo, ProfileInfo profileInfo) {
+	public void update(Long loginId, EssentialAccountInfo essentialInfo, ProfileInfo profileInfo) {
 		accountCommandHandler.update(loginId, essentialInfo, profileInfo);
 	}
 
-	public void delete(Integer loginId) {
+	public void delete(Long loginId) {
 		accountCommandHandler.delete(loginId);
 	}
 }

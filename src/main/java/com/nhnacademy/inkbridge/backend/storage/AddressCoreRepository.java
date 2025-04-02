@@ -17,7 +17,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class AddressCoreRepository implements AddressRepository {
 
-	private final MemberRepository memberRepository;
+	private final MemberAccountJpaRepository memberRepository;
 	private final AddressJpaRepository addressJpaRepository;
 	private final AddressQuerydslRepository addressQuerydslRepository;
 

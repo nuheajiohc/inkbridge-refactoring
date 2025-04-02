@@ -2,6 +2,7 @@ package com.nhnacademy.inkbridge.backend.domain;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
 public class Address {
@@ -9,25 +10,26 @@ public class Address {
 	public static int MAX_LIMIT = 10;
 	public static int MIN_LIMIT = 1;
 
-	private Long id;
+	private Long addressId;
 	private String receiverName;
 	private String receiverPhone;
 	private String roadName;
 	private String addressDetail;
 	private String zipCode;
 	private Boolean isDefault;
+	private Long memberId;
 
 	@Builder
-	public Address(Long id, String receiverName, String receiverPhone, String roadName, String addressDetail,
-		String zipCode,
-		Boolean isDefault) {
-		this.id = id;
+	public Address(Long addressId, String receiverName, String receiverPhone, String roadName, String addressDetail,
+		String zipCode, Boolean isDefault, Long memberId) {
+		this.addressId = addressId;
 		this.receiverName = receiverName;
 		this.receiverPhone = receiverPhone;
 		this.roadName = roadName;
 		this.addressDetail = addressDetail;
 		this.zipCode = zipCode;
 		this.isDefault = isDefault;
+		this.memberId = memberId;
 	}
 
 	public static boolean isMaxLimit(long count) {

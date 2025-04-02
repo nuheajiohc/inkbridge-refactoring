@@ -34,7 +34,7 @@ public class AddressUpdateRequest {
 
 	public Address toAddress() {
 		return Address.builder()
-			.id(id)
+			.addressId(id)
 			.receiverName(receiverName)
 			.receiverPhone(receiverPhone)
 			.roadName(roadName)

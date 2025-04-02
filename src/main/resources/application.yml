@@ -1,5 +1,3 @@
-#spring.config.activate.on-profile=local
-
 secure-key-manager:
   password: ${KEY_MANAGER_PASSWORD}
   url: https://api-keymanager.nhncloudservice.com

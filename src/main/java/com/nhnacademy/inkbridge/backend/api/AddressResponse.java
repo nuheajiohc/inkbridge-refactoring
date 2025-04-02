@@ -30,7 +30,7 @@ public class AddressResponse {
 
 	public static AddressResponse from(Address address) {
 		return AddressResponse.builder()
-			.id(address.getId())
+			.id(address.getAddressId())
 			.receiverName(address.getReceiverName())
 			.receiverPhone(address.getReceiverPhone())
 			.roadName(address.getRoadName())

@@ -9,7 +9,6 @@ import com.nhnacademy.inkbridge.backend.domain.Address;
 import com.nhnacademy.inkbridge.backend.domain.AddressRepository;
 import com.nhnacademy.inkbridge.backend.domain.BusinessException;
 import com.nhnacademy.inkbridge.backend.domain.ErrorMessage;
-import com.nhnacademy.inkbridge.backend.repository.MemberRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -17,7 +16,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class AddressCoreRepository implements AddressRepository {
 
-	private final MemberRepository memberRepository;
+	private final MemberAccountJpaRepository memberRepository;
 	private final AddressJpaRepository addressJpaRepository;
 	private final AddressQuerydslRepository addressQuerydslRepository;
 
@@ -54,7 +53,7 @@ public class AddressCoreRepository implements AddressRepository {
 
 	@Override
 	public void update(Address address) {
-		AddressEntity addressEntity = addressJpaRepository.findById(address.getId())
+		AddressEntity addressEntity = addressJpaRepository.findById(address.getAddressId())
 			.orElseThrow(() -> new BusinessException(ErrorMessage.ADDRESS_NOT_EXISTS));
 		addressEntity.update(address);
 	}

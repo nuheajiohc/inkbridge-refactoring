@@ -24,11 +24,8 @@ public class AddressPolicyHandler {
 		}
 	}
 
-	public void validateDefaultAddress(Long addressId){
-		Address address = addressRepository.findByAddressId(addressId)
-			.orElseThrow(() -> new BusinessException(ErrorMessage.ADDRESS_NOT_EXISTS));
-
-		if(address.isDefault()){
+	public void validateDefaultAddress(Address address) {
+		if (address.isDefault()) {
 			throw new BusinessException(ErrorMessage.ADDRESS_DELETE_FORBIDDEN);
 		}
 	}
@@ -39,10 +36,7 @@ public class AddressPolicyHandler {
 		}
 	}
 
-	public void processDefaultAddressOnUpdate(Long userId, Address updated) {
-		Address oldAddress = addressRepository.findByAddressId(updated.getId())
-			.orElseThrow(() -> new BusinessException(ErrorMessage.ADDRESS_NOT_EXISTS));
-
+	public void processDefaultAddressOnUpdate(Long userId, Address oldAddress, Address updated) {
 		if (updated.isSameDefaultStatus(oldAddress)) {
 			return;
 		}

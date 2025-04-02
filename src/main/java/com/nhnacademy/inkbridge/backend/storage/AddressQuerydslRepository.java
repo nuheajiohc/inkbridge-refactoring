@@ -21,14 +21,14 @@ public class AddressQuerydslRepository {
 	void unmarkDefaultAddress(Long userId) {
 		queryFactory.update(addressEntity)
 			.set(addressEntity.isDefault, false)
-			.where(addressEntity.memberEntity.memberId.eq(userId).and(addressEntity.isDefault.eq(true)))
+			.where(addressEntity.memberEntity.id.eq(userId).and(addressEntity.isDefault.eq(true)))
 			.execute();
 	}
 
 	Long countByUserId(Long userId) {
 		return queryFactory.select(addressEntity.count())
 			.from(addressEntity)
-			.where(addressEntity.memberEntity.memberId.eq(userId))
+			.where(addressEntity.memberEntity.id.eq(userId))
 			.fetchFirst();
 	}
 
@@ -40,10 +40,11 @@ public class AddressQuerydslRepository {
 				addressEntity.roadName,
 				addressEntity.addressDetail,
 				addressEntity.zipCode,
-				addressEntity.isDefault
+				addressEntity.isDefault,
+				addressEntity.memberEntity.id
 			))
 			.from(addressEntity)
-			.where(addressEntity.memberEntity.memberId.eq(userId))
+			.where(addressEntity.memberEntity.id.eq(userId))
 			.orderBy(addressEntity.isDefault.desc(), addressEntity.updatedAt.desc())
 			.fetch();
 	}

@@ -11,7 +11,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.nhnacademy.inkbridge.backend.domain.Address;
-import com.nhnacademy.inkbridge.backend.entity.Member;
 import com.nhnacademy.inkbridge.backend.storage.support.BaseEntity;
 
 import lombok.AccessLevel;
@@ -50,12 +49,12 @@ public class AddressEntity extends BaseEntity {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "member_id", nullable = false)
-	private Member memberEntity;
+	private MemberEntity memberEntity;
 
 	@Builder
 	public AddressEntity(String roadName, String addressDetail, String zipCode, String receiverName,
 		String receiverPhone,
-		Boolean isDefault, Member memberEntity) {
+		Boolean isDefault, MemberEntity memberEntity) {
 		this.roadName = roadName;
 		this.addressDetail = addressDetail;
 		this.zipCode = zipCode;
@@ -67,13 +66,14 @@ public class AddressEntity extends BaseEntity {
 
 	public Address toAddress(){
 		return Address.builder()
-			.id(this.id)
+			.addressId(this.id)
 			.roadName(this.roadName)
 			.addressDetail(this.addressDetail)
 			.zipCode(this.zipCode)
 			.receiverName(this.receiverName)
 			.receiverPhone(this.receiverPhone)
 			.isDefault(this.isDefault)
+			.memberId(this.memberEntity.getId())
 			.build();
 	}
 

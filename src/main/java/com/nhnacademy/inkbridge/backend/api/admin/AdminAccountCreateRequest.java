@@ -5,7 +5,8 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
-import com.nhnacademy.inkbridge.backend.domain.admin.Admin;
+import com.nhnacademy.inkbridge.backend.domain.EssentialAccountInfo;
+import com.nhnacademy.inkbridge.backend.domain.ProfileInfo;
 
 import lombok.Getter;
 
@@ -28,11 +29,16 @@ public class AdminAccountCreateRequest {
 		this.password = password;
 	}
 
-	public Admin toAdmin() {
-		return Admin.builder()
-			.name(name)
+	public EssentialAccountInfo toEssentialAccountInfo() {
+		return EssentialAccountInfo.builder()
 			.email(email)
 			.password(password)
+			.build();
+	}
+
+	public ProfileInfo toProfileInfo() {
+		return ProfileInfo.builder()
+			.name(name)
 			.build();
 	}
 }

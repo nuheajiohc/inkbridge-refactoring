@@ -26,7 +26,7 @@ public class MemberAccountController {
 
 	@PostMapping
 	public ApiSuccessResponse<Void> createMemberAccount(@Valid @RequestBody MemberAccountCreateRequest request){
-		memberAccountService.create(request.toMember());
+		memberAccountService.signup(request.toEssentialAccountInfo(), request.toProfileInfo());
 		return ApiSuccessResponse.success(ResponseMessage.ACCOUNT_CREATED);
 	}
 
@@ -34,7 +34,8 @@ public class MemberAccountController {
 	public ApiSuccessResponse<Void> updateMemberAccount(
 		@RequestHeader(HeaderConstants.MEMBER_ID_HEADER) Integer loginId,
 		@Valid @RequestBody MemberAccountUpdateRequest request){
-		memberAccountService.update(loginId, request.toMember());
+
+		memberAccountService.update(loginId, request.toEssentialAccountInfo(), request.toProfileInfo());
 		return ApiSuccessResponse.success(ResponseMessage.ACCOUNT_UPDATED);
 	}
 

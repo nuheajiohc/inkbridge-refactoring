@@ -30,4 +30,10 @@ public class GradeCoreRepository implements GradeRepository {
 		Optional<GradeEntity> gradeEntity =gradeJpaRepository.findByName("STANDARD");
 		return gradeEntity.map(GradeEntity::toGrade);
 	}
+
+	@Override
+	public Optional<Grade> findByName(String name) {
+		Optional<GradeEntity> gradeEntity =gradeJpaRepository.findByName(name);
+		return gradeEntity.map(GradeEntity::toGrade);
+	}
 }

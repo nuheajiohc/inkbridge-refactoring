@@ -6,7 +6,9 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
+import com.nhnacademy.inkbridge.backend.domain.EssentialAccountInfo;
 import com.nhnacademy.inkbridge.backend.domain.Member;
+import com.nhnacademy.inkbridge.backend.domain.ProfileInfo;
 
 import lombok.Getter;
 
@@ -39,13 +41,18 @@ public class MemberAccountCreateRequest {
 		this.birth = birth;
 	}
 
-	public Member toMember(){
-		return Member.builder()
-			.name(name)
+	public EssentialAccountInfo toEssentialAccountInfo() {
+		return EssentialAccountInfo.builder()
 			.email(email)
 			.password(password)
-			.phoneNumber(phoneNumber)
+			.build();
+	}
+
+	public ProfileInfo toProfileInfo() {
+		return ProfileInfo.builder()
+			.name(name)
 			.birth(birth)
+			.phoneNumber(phoneNumber)
 			.build();
 	}
 }

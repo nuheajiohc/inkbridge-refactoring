@@ -4,8 +4,10 @@ import org.springframework.stereotype.Repository;
 
 import com.nhnacademy.inkbridge.backend.domain.BusinessException;
 import com.nhnacademy.inkbridge.backend.domain.ErrorMessage;
+import com.nhnacademy.inkbridge.backend.domain.EssentialAccountInfo;
 import com.nhnacademy.inkbridge.backend.domain.Member;
 import com.nhnacademy.inkbridge.backend.domain.MemberAccountRepository;
+import com.nhnacademy.inkbridge.backend.domain.ProfileInfo;
 
 import lombok.RequiredArgsConstructor;
 
@@ -33,10 +35,10 @@ public class MemberAccountCoreRepository implements MemberAccountRepository {
 	}
 
 	@Override
-	public void update(Integer loginId, Member member) {
+	public void update(Integer loginId, EssentialAccountInfo essentialAccountInfo, ProfileInfo profileInfo) {
 		MemberEntity memberEntity = memberAccountJpaRepository.findById(loginId)
 			.orElseThrow(() -> new BusinessException(ErrorMessage.ACCOUNT_NOT_EXISTS));
-		memberEntity.update(member);
+		memberEntity.update(essentialAccountInfo, profileInfo);
 	}
 
 	@Override

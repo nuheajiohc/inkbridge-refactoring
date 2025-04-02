@@ -4,7 +4,9 @@ import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.Length;
 
+import com.nhnacademy.inkbridge.backend.domain.EssentialAccountInfo;
 import com.nhnacademy.inkbridge.backend.domain.Member;
+import com.nhnacademy.inkbridge.backend.domain.ProfileInfo;
 
 public class MemberAccountUpdateRequest {
 
@@ -23,10 +25,15 @@ public class MemberAccountUpdateRequest {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public Member toMember(){
-		return Member.builder()
-			.name(name)
+	public EssentialAccountInfo toEssentialAccountInfo() {
+		return EssentialAccountInfo.builder()
 			.password(password)
+			.build();
+	}
+
+	public ProfileInfo toProfileInfo() {
+		return ProfileInfo.builder()
+			.name(name)
 			.phoneNumber(phoneNumber)
 			.build();
 	}

@@ -4,7 +4,6 @@ import javax.validation.Valid;
 import javax.ws.rs.core.Response;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,7 +27,7 @@ public class AdminAccountController {
 
 	@PostMapping("/accounts")
 	public ApiSuccessResponse<Void> createAdminAccount(@Valid @RequestBody AdminAccountCreateRequest request) {
-		adminAccountService.create(request.toAdmin());
+		adminAccountService.create(request.toEssentialAccountInfo(), request.toProfileInfo());
 		return ApiSuccessResponse.success(ResponseMessage.ACCOUNT_CREATED);
 	}
 
@@ -37,7 +36,7 @@ public class AdminAccountController {
 		@RequestHeader(HeaderConstants.MEMBER_ID_HEADER) Integer loginId,
 		@Valid @RequestBody AdminAccountUpdateRequest request) {
 
-		adminAccountService.update(loginId, request.toAdmin());
+		adminAccountService.update(loginId, request.toEssentialAccountInfo(), request.toProfileInfo());
 		return ApiSuccessResponse.success(ResponseMessage.ACCOUNT_UPDATED);
 	}
 

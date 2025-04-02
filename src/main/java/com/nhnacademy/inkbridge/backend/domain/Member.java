@@ -37,12 +37,21 @@ public class Member {
 		this.grade = grade;
 	}
 
+	public static Member create(EssentialAccountInfo essentialInfo, ProfileInfo profileInfo, String encodedPassword, Grade grade){
+		return Member.builder()
+			.name(profileInfo.getName())
+			.email(essentialInfo.getEmail())
+			.password(encodedPassword)
+			.phoneNumber(profileInfo.getPhoneNumber())
+			.birth(profileInfo.getBirth())
+			.totalPoint(5000)
+			.role(AccountRole.MEMBER)
+			.status(AccountStatus.ACTIVE)
+			.grade(grade)
+			.build();
+	}
+
 	public LocalDate getBirth() {
 		return birth.getValue();
 	}
-
-	public void setEncodePassword(String password) {
-		this.password = password;
-	}
-
 }

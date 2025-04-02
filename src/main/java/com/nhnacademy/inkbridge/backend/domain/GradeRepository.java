@@ -8,4 +8,6 @@ public interface GradeRepository {
 	List<Grade> findAll();
 
 	Optional<Grade> findByDefaultGrade();
+
+	Optional<Grade> findByName(String name);
 }

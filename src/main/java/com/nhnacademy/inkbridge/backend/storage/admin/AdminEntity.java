@@ -14,6 +14,8 @@ import javax.persistence.Table;
 
 import com.nhnacademy.inkbridge.backend.domain.AccountRole;
 import com.nhnacademy.inkbridge.backend.domain.AccountStatus;
+import com.nhnacademy.inkbridge.backend.domain.EssentialAccountInfo;
+import com.nhnacademy.inkbridge.backend.domain.ProfileInfo;
 import com.nhnacademy.inkbridge.backend.domain.admin.Admin;
 import com.nhnacademy.inkbridge.backend.storage.support.BaseEntity;
 
@@ -57,13 +59,14 @@ public class AdminEntity extends BaseEntity {
 		this.accountStatus = accountStatus;
 	}
 
-	public void update(Admin admin){
-		this.email = admin.getEmail();
-		this.password = admin.getPassword();
-		this.name = admin.getName();
+	public void update(EssentialAccountInfo essentialAccountInfo, ProfileInfo profileInfo) {
+		this.password = essentialAccountInfo.getPassword();
+		this.name = profileInfo.getName();
 	}
 
 	public void delete() {
 		this.accountStatus = AccountStatus.DELETED;
 	}
+
+
 }

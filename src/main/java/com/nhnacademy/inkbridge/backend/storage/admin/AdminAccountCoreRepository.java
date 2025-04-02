@@ -4,6 +4,8 @@ import org.springframework.stereotype.Repository;
 
 import com.nhnacademy.inkbridge.backend.domain.BusinessException;
 import com.nhnacademy.inkbridge.backend.domain.ErrorMessage;
+import com.nhnacademy.inkbridge.backend.domain.EssentialAccountInfo;
+import com.nhnacademy.inkbridge.backend.domain.ProfileInfo;
 import com.nhnacademy.inkbridge.backend.domain.admin.Admin;
 import com.nhnacademy.inkbridge.backend.domain.admin.AdminAccountRepository;
 
@@ -28,10 +30,10 @@ public class AdminAccountCoreRepository implements AdminAccountRepository {
 	}
 
 	@Override
-	public void update(Integer adminId, Admin admin) {
-		AdminEntity adminEntity = adminAccountJpaRepository.findById(adminId)
+	public void update(Integer loginId, EssentialAccountInfo essentialAccountInfo, ProfileInfo profileInfo) {
+		AdminEntity adminEntity = adminAccountJpaRepository.findById(loginId)
 			.orElseThrow(() -> new BusinessException(ErrorMessage.ACCOUNT_NOT_EXISTS));
-		adminEntity.update(admin);
+		adminEntity.update(essentialAccountInfo, profileInfo);
 	}
 
 	@Override

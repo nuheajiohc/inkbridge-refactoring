@@ -4,7 +4,7 @@ Authorization-Id: 1
 Content-Type: application/json
 
 {
-  "receiverName": "최재훈5",
+  "receiverName": "최재훈6",
   "receiverPhone": "010-1234-5678",
   "roadName": "서울특별시 강남구 테헤란로 123",
   "addressDetail": "101동 202호",
@@ -18,8 +18,8 @@ Authorization-Id: 1
 Content-Type: application/json
 
 {
-  "id": 25,
-  "receiverName": "최재훈1",
+  "id": 27,
+  "receiverName": "최재훈16",
   "receiverPhone": "010-1234-5678",
   "roadName": "서울특별시 강남구 테헤란로 124",
   "addressDetail": "101동 202호",
@@ -28,7 +28,7 @@ Content-Type: application/json
 }
 
 ### 주소 삭제
-DELETE http://localhost:8080/api/my/addresses/22
+DELETE http://localhost:8080/api/my/addresses/27
 Authorization-Id: 1
 
 ### 주소록 조회
@@ -46,7 +46,7 @@ Authorization-Id: 1
 
 
 ### 관리자 생성
-POST http://localhost:8080/api/admins
+POST http://localhost:8080/api/admin/accounts
 Content-Type: application/json
 
 {
@@ -55,3 +55,43 @@ Content-Type: application/json
   "password": "jaehun1234"
 }
 
+### 관리자 수정
+PUT http://localhost:8080/api/admin/accounts
+Authorization-Id: 5
+Content-Type: application/json
+
+{
+  "name": "updatedjaehun1",
+  "password": "jaehun1234"
+}
+
+### 관리자 삭제
+DELETE http://localhost:8080/api/admin/accounts
+Authorization-Id: 5
+
+### 멤버 생성
+POST http://localhost:8080/api/accounts
+Content-Type: application/json
+
+{
+  "name": "newjaehun",
+  "password": "jaehun1234",
+  "email": "3831568@naver.com",
+  "birth": "19961005",
+  "phoneNumber": "010-4320-1568"
+}
+
+### 멤버 수정
+PUT http://localhost:8080/api/accounts
+Authorization-Id: 8
+Content-Type: application/json
+
+{
+  "name": "newjaehunnew",
+  "password": "jaehun1234",
+  "phoneNumber": "010-4320-1568"
+}
+
+### 멤버 삭제
+DELETE http://localhost:8080/api/accounts
+Authorization-Id: 8

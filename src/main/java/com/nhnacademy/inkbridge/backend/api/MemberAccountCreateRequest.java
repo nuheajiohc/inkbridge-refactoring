@@ -7,7 +7,6 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.Length;
 
 import com.nhnacademy.inkbridge.backend.domain.EssentialAccountInfo;
-import com.nhnacademy.inkbridge.backend.domain.Member;
 import com.nhnacademy.inkbridge.backend.domain.ProfileInfo;
 
 import lombok.Getter;

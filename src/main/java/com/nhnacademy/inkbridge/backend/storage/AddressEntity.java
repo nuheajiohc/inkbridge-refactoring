@@ -11,7 +11,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.nhnacademy.inkbridge.backend.domain.Address;
-import com.nhnacademy.inkbridge.backend.entity.Member;
 import com.nhnacademy.inkbridge.backend.storage.support.BaseEntity;
 
 import lombok.AccessLevel;

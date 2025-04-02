@@ -5,7 +5,6 @@ import javax.validation.constraints.NotBlank;
 import org.hibernate.validator.constraints.Length;
 
 import com.nhnacademy.inkbridge.backend.domain.EssentialAccountInfo;
-import com.nhnacademy.inkbridge.backend.domain.Member;
 import com.nhnacademy.inkbridge.backend.domain.ProfileInfo;
 
 public class MemberAccountUpdateRequest {

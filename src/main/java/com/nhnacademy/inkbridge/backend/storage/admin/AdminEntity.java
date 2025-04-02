@@ -16,7 +16,6 @@ import com.nhnacademy.inkbridge.backend.domain.AccountRole;
 import com.nhnacademy.inkbridge.backend.domain.AccountStatus;
 import com.nhnacademy.inkbridge.backend.domain.EssentialAccountInfo;
 import com.nhnacademy.inkbridge.backend.domain.ProfileInfo;
-import com.nhnacademy.inkbridge.backend.domain.admin.Admin;
 import com.nhnacademy.inkbridge.backend.storage.support.BaseEntity;
 
 import lombok.AccessLevel;

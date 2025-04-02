@@ -7,7 +7,6 @@ import com.nhnacademy.inkbridge.backend.domain.ProfileInfo;
 
 import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
 public class Admin {

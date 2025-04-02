@@ -1,7 +1,6 @@
 package com.nhnacademy.inkbridge.backend.api.admin;
 
 import javax.validation.Valid;
-import javax.ws.rs.core.Response;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;

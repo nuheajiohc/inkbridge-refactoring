@@ -1,0 +1,7 @@
+### 출판사 등록
+POST http://localhost:8080/api/admin/publishers
+Content-Type: application/json
+
+{
+  "name": "최재훈출판1"
+}

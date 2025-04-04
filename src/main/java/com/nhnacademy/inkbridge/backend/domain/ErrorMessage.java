@@ -16,7 +16,9 @@ public enum ErrorMessage {
 
 	DATE_FORMAT_NOT_SUPPORTED("지원하지 않는 날짜 형식입니다."),
 
-	GRADE_NOT_EXISTS("등급이 존재하지 않습니다.");
+	GRADE_NOT_EXISTS("등급이 존재하지 않습니다."),
+
+	PUBLISHER_DUPLICATED("중복된 출판사는 등록할 수 없습니다.");
 
 	private final String text;
 

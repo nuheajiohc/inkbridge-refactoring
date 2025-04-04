@@ -1,14 +1,7 @@
 package com.nhnacademy.inkbridge.backend.controller;
 
-import com.nhnacademy.inkbridge.backend.dto.publisher.PublisherCreateRequestDto;
-import com.nhnacademy.inkbridge.backend.dto.publisher.PublisherReadResponseDto;
-import com.nhnacademy.inkbridge.backend.dto.publisher.PublisherUpdateRequestDto;
-import com.nhnacademy.inkbridge.backend.enums.PublisherMessageEnum;
-import com.nhnacademy.inkbridge.backend.exception.ValidationException;
-import com.nhnacademy.inkbridge.backend.service.PublisherService;
 import javax.validation.Valid;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -22,6 +15,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.nhnacademy.inkbridge.backend.dto.publisher.PublisherCreateRequestDto;
+import com.nhnacademy.inkbridge.backend.dto.publisher.PublisherReadResponseDto;
+import com.nhnacademy.inkbridge.backend.dto.publisher.PublisherUpdateRequestDto;
+import com.nhnacademy.inkbridge.backend.enums.PublisherMessageEnum;
+import com.nhnacademy.inkbridge.backend.exception.ValidationException;
+import com.nhnacademy.inkbridge.backend.service.PublisherService;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * class: PublisherController.
  *
@@ -30,7 +33,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@RequestMapping("/api/admin/publishers")
+@RequestMapping("/api/admin/publisherss")
 @RequiredArgsConstructor
 @Slf4j
 public class PublisherController {

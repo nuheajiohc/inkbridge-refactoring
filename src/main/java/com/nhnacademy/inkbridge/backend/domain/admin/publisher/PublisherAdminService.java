@@ -16,9 +16,13 @@ public class PublisherAdminService {
 	private final PublisherRepository publisherRepository;
 
 	public Integer create(Publisher publisher) {
-		if(publisherRepository.existsByName(publisher.getName())){
+		if (publisherRepository.existsByName(publisher.getName())) {
 			throw new BusinessException(ErrorMessage.PUBLISHER_DUPLICATED);
 		}
 		return publisherRepository.save(publisher);
+	}
+
+	public void update(Integer publisherId, Publisher publisher) {
+		publisherRepository.update(publisherId, publisher);
 	}
 }

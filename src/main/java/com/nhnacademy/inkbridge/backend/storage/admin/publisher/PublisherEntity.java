@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.nhnacademy.inkbridge.backend.domain.admin.publisher.Publisher;
+
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,5 +29,9 @@ public class PublisherEntity {
 
 	public PublisherEntity(String name) {
 		this.name = name;
+	}
+
+	public void update(Publisher publisher) {
+		this.name = publisher.getName();
 	}
 }

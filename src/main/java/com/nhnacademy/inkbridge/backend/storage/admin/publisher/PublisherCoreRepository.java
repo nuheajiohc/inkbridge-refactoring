@@ -30,4 +30,11 @@ public class PublisherCoreRepository implements PublisherRepository {
 	public boolean existsByName(String name) {
 		return publisherJpaRepository.existsByName(name);
 	}
+
+	@Override
+	public void update(Integer publisherId,Publisher publisher) {
+		PublisherEntity publisherEntity = publisherJpaRepository.findById(publisherId)
+			.orElseThrow(() -> new BusinessException(ErrorMessage.PUBLISHER_NOT_EXISTS));
+		publisherEntity.update(publisher);
+	}
 }

@@ -8,4 +8,6 @@ public interface PublisherRepository {
 	void update(Integer publisherId, Publisher publisher);
 
 	void delete(Integer publisherId);
+
+	Publisher findById(Integer publishId);
 }

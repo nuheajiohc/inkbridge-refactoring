@@ -21,7 +21,8 @@ public enum ResponseMessage {
 
 	PUBLISHER_CREATED("출판사 생성완료했습니다."),
 	PUBLISHER_UPDATED("출판사 수정완료되었습니다."),
-	PUBLISHER_DELETED("출판사 삭제완료되었습니다.");
+	PUBLISHER_DELETED("출판사 삭제완료되었습니다."),
+	PUBLISHER_READ_SUCCESS("출판사 조회 성공하였습니다.");
 
 	private final String text;
 

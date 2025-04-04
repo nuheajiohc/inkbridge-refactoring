@@ -29,4 +29,8 @@ public class PublisherAdminService {
 	public void delete(Integer publisherId) {
 		publisherRepository.delete(publisherId);
 	}
+
+	public Publisher getPublisher(Integer publishId) {
+		return publisherRepository.findById(publishId);
+	}
 }

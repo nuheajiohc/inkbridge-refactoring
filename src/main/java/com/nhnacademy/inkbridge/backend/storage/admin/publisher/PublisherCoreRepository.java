@@ -46,4 +46,15 @@ public class PublisherCoreRepository implements PublisherRepository {
 			.orElseThrow(() -> new BusinessException(ErrorMessage.PUBLISHER_NOT_EXISTS));
 		publisherEntity.delete();
 	}
+
+	@Override
+	public Publisher findById(Integer publishId) {
+		PublisherEntity publisherEntity = publisherJpaRepository.findById(publishId)
+			.orElseThrow(() -> new BusinessException(ErrorMessage.PUBLISHER_NOT_EXISTS));
+		return Publisher.builder()
+			.id(publisherEntity.getId())
+			.name(publisherEntity.getName())
+			.status(publisherEntity.getStatus())
+			.build();
+	}
 }

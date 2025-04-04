@@ -4,6 +4,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Repository;
 
 import com.nhnacademy.inkbridge.backend.domain.BusinessException;
+import com.nhnacademy.inkbridge.backend.domain.DomainStatus;
 import com.nhnacademy.inkbridge.backend.domain.ErrorMessage;
 import com.nhnacademy.inkbridge.backend.domain.admin.publisher.Publisher;
 import com.nhnacademy.inkbridge.backend.domain.admin.publisher.PublisherRepository;
@@ -18,10 +19,11 @@ public class PublisherCoreRepository implements PublisherRepository {
 
 	@Override
 	public Integer save(Publisher publisher) {
-		try{
-			PublisherEntity save = publisherJpaRepository.save(new PublisherEntity(publisher.getName()));
-			return save.getId();
-		}catch(DataIntegrityViolationException e){
+		try {
+			PublisherEntity publisherEntity = publisherJpaRepository.save(
+				new PublisherEntity(publisher.getName(), DomainStatus.ACTIVE));
+			return publisherEntity.getId();
+		} catch (DataIntegrityViolationException e) {
 			throw new BusinessException(ErrorMessage.PUBLISHER_DUPLICATED);
 		}
 	}
@@ -32,9 +34,16 @@ public class PublisherCoreRepository implements PublisherRepository {
 	}
 
 	@Override
-	public void update(Integer publisherId,Publisher publisher) {
+	public void update(Integer publisherId, Publisher publisher) {
 		PublisherEntity publisherEntity = publisherJpaRepository.findById(publisherId)
 			.orElseThrow(() -> new BusinessException(ErrorMessage.PUBLISHER_NOT_EXISTS));
 		publisherEntity.update(publisher);
+	}
+
+	@Override
+	public void delete(Integer publisherId) {
+		PublisherEntity publisherEntity = publisherJpaRepository.findById(publisherId)
+			.orElseThrow(() -> new BusinessException(ErrorMessage.PUBLISHER_NOT_EXISTS));
+		publisherEntity.delete();
 	}
 }

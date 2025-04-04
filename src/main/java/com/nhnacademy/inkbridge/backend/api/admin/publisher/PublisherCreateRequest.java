@@ -15,6 +15,8 @@ public class PublisherCreateRequest {
 	private String name;
 
 	public Publisher toPublisher() {
-		return new Publisher(name);
+		return Publisher.builder()
+			.name(name)
+			.build();
 	}
 }

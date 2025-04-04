@@ -25,4 +25,8 @@ public class PublisherAdminService {
 	public void update(Integer publisherId, Publisher publisher) {
 		publisherRepository.update(publisherId, publisher);
 	}
+
+	public void delete(Integer publisherId) {
+		publisherRepository.delete(publisherId);
+	}
 }

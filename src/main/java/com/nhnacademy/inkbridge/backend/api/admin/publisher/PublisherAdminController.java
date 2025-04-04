@@ -2,6 +2,7 @@ package com.nhnacademy.inkbridge.backend.api.admin.publisher;
 
 import javax.validation.Valid;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -37,4 +38,13 @@ public class PublisherAdminController {
 		publisherAdminService.update(publisherId, request.toPublisher());
 		return ApiSuccessResponse.success(ResponseMessage.PUBLISHER_UPDATED);
 	}
+
+	@DeleteMapping("/{publisherId}")
+	public ApiSuccessResponse<Void> deletePublisher(@PathVariable Integer publisherId) {
+
+		publisherAdminService.delete(publisherId);
+		return ApiSuccessResponse.success(ResponseMessage.PUBLISHER_DELETED);
+	}
+
+
 }

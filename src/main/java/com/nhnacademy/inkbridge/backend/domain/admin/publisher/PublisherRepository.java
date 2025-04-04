@@ -6,4 +6,6 @@ public interface PublisherRepository {
 	boolean existsByName(String name);
 
 	void update(Integer publisherId, Publisher publisher);
+
+	void delete(Integer publisherId);
 }

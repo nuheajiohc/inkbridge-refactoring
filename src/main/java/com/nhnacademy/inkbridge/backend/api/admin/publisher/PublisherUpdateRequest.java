@@ -1,17 +1,24 @@
 package com.nhnacademy.inkbridge.backend.api.admin.publisher;
 
+import javax.validation.constraints.NotBlank;
+
+import com.nhnacademy.inkbridge.backend.domain.DomainStatus;
 import com.nhnacademy.inkbridge.backend.domain.admin.publisher.Publisher;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Getter
-@NoArgsConstructor
 public class PublisherUpdateRequest {
 
+	@NotBlank
 	private String name;
+	@NotBlank
+	private String status;
 
 	public Publisher toPublisher() {
-		return new Publisher(name);
+		return Publisher.builder()
+			.name(name)
+			.status(DomainStatus.getStatus(status))
+			.build();
 	}
 }

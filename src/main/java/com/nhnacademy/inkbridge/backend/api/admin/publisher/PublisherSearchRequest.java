@@ -24,6 +24,6 @@ public class PublisherSearchRequest {
 	}
 
 	public DomainStatus getStatus() {
-		return status == null ? null : DomainStatus.valueOf(status);
+		return status == null ? null : DomainStatus.valueOf(status.toUpperCase());
 	}
 }

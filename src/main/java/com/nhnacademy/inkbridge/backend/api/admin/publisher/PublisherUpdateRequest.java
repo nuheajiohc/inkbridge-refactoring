@@ -13,12 +13,15 @@ public class PublisherUpdateRequest {
 	@NotBlank
 	private String name;
 	@NotBlank
+	@EnumValid(target = DomainStatus.class, ignoreCase = true)
 	private String status;
 
 	public Publisher toPublisher() {
 		return Publisher.builder()
 			.name(name)
-			.status(DomainStatus.getStatus(status))
+			.status(DomainStatus.valueOf(status.toUpperCase()))
 			.build();
 	}
 }
+
+

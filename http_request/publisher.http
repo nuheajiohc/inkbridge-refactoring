@@ -3,13 +3,20 @@ POST http://localhost:8080/api/admin/publishers
 Content-Type: application/json
 
 {
-  "name": "최재훈출판11"
+  "name": "재훈출판사10"
 }
 
 ### 출판사 수정
-PUT http://localhost:8080/api/admin/publishers/1
+PUT http://localhost:8080/api/admin/publishers/21
 Content-Type: application/json
 
 {
-  "name": "최재훈출판수정"
+  "name": "최재훈출판수정일세",
+  "status": "ACTIV"
 }
+
+### 출판사 조회
+GET http://localhost:8080/api/admin/publishers/21
+
+### 출판사 목록 조회
+GET http://localhost:8080/api/admin/publishers

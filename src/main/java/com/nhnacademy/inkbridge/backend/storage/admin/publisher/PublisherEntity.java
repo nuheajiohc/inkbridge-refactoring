@@ -11,6 +11,7 @@ import javax.persistence.Table;
 
 import com.nhnacademy.inkbridge.backend.domain.DomainStatus;
 import com.nhnacademy.inkbridge.backend.domain.admin.publisher.Publisher;
+import com.nhnacademy.inkbridge.backend.storage.support.BaseEntity;
 
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -20,7 +21,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @Table(name = "publisher")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class PublisherEntity {
+public class PublisherEntity extends BaseEntity {
 
 	@Id
 	@Column(name = "publisher_id")

@@ -1,6 +1,7 @@
 package com.nhnacademy.inkbridge.backend.storage.admin.publisher;
 
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Repository;
 
 import com.nhnacademy.inkbridge.backend.domain.BusinessException;
@@ -16,6 +17,7 @@ import lombok.RequiredArgsConstructor;
 public class PublisherCoreRepository implements PublisherRepository {
 
 	private final PublisherJpaRepository publisherJpaRepository;
+	private final PublisherQuerydslRepository publisherQuerydslRepository;
 
 	@Override
 	public Integer save(Publisher publisher) {
@@ -56,5 +58,10 @@ public class PublisherCoreRepository implements PublisherRepository {
 			.name(publisherEntity.getName())
 			.status(publisherEntity.getStatus())
 			.build();
+	}
+
+	@Override
+	public Page<Publisher> findAllByPage(DomainStatus domainStatus, Integer page, Integer size) {
+		return publisherQuerydslRepository.findPublishersByPage(domainStatus, page, size);
 	}
 }

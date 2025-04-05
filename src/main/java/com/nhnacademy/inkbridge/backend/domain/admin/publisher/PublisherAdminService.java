@@ -1,9 +1,11 @@
 package com.nhnacademy.inkbridge.backend.domain.admin.publisher;
 
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.nhnacademy.inkbridge.backend.domain.BusinessException;
+import com.nhnacademy.inkbridge.backend.domain.DomainStatus;
 import com.nhnacademy.inkbridge.backend.domain.ErrorMessage;
 
 import lombok.RequiredArgsConstructor;
@@ -30,7 +32,13 @@ public class PublisherAdminService {
 		publisherRepository.delete(publisherId);
 	}
 
+	@Transactional(readOnly = true)
 	public Publisher getPublisher(Integer publishId) {
 		return publisherRepository.findById(publishId);
+	}
+
+	@Transactional(readOnly = true)
+	public Page<Publisher> getPublishers(DomainStatus status, Integer page, Integer size) {
+		return publisherRepository.findAllByPage(status, page, size);
 	}
 }

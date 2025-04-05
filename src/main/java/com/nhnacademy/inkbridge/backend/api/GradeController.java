@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nhnacademy.inkbridge.backend.api.support.ApiSuccessResponse;
-import com.nhnacademy.inkbridge.backend.api.support.ResponseMessage;
+import com.nhnacademy.inkbridge.backend.api.support.response.ApiSuccessResponse;
+import com.nhnacademy.inkbridge.backend.api.support.response.ResponseMessage;
 import com.nhnacademy.inkbridge.backend.domain.Grade;
 import com.nhnacademy.inkbridge.backend.domain.GradeService;
 

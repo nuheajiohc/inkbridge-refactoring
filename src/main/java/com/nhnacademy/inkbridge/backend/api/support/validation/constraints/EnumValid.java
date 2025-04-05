@@ -1,4 +1,4 @@
-package com.nhnacademy.inkbridge.backend.api.admin.publisher;
+package com.nhnacademy.inkbridge.backend.api.support.validation.constraints;
 
 import static java.lang.annotation.ElementType.*;
 import static java.lang.annotation.RetentionPolicy.*;
@@ -8,6 +8,8 @@ import java.lang.annotation.Target;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
+
+import com.nhnacademy.inkbridge.backend.api.support.validation.EnumValidator;
 
 @Target(FIELD)
 @Retention(RUNTIME)

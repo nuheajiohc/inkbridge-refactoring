@@ -1,4 +1,4 @@
-package com.nhnacademy.inkbridge.backend.api.admin.publisher;
+package com.nhnacademy.inkbridge.backend.api.support.validation;
 
 import java.util.Arrays;
 import java.util.Set;
@@ -6,6 +6,8 @@ import java.util.stream.Collectors;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
+
+import com.nhnacademy.inkbridge.backend.api.support.validation.constraints.EnumValid;
 
 public class EnumValidator implements ConstraintValidator<EnumValid, String> {
 

@@ -1,4 +1,4 @@
-package com.nhnacademy.inkbridge.backend.api.support;
+package com.nhnacademy.inkbridge.backend.api.support.exception;
 
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import com.nhnacademy.inkbridge.backend.api.support.response.ApiErrorResponse;
 import com.nhnacademy.inkbridge.backend.domain.BusinessException;
 
 

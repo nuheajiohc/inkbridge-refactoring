@@ -1,4 +1,4 @@
-package com.nhnacademy.inkbridge.backend.api.support;
+package com.nhnacademy.inkbridge.backend.api.support.response;
 
 import lombok.Getter;
 

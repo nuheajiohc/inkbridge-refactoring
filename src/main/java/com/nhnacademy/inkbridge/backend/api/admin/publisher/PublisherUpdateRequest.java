@@ -2,6 +2,7 @@ package com.nhnacademy.inkbridge.backend.api.admin.publisher;
 
 import javax.validation.constraints.NotBlank;
 
+import com.nhnacademy.inkbridge.backend.api.support.validation.constraints.EnumValid;
 import com.nhnacademy.inkbridge.backend.domain.DomainStatus;
 import com.nhnacademy.inkbridge.backend.domain.admin.publisher.Publisher;
 

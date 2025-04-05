@@ -17,8 +17,7 @@ public enum ResponseMessage {
 	// 계정
 	ACCOUNT_CREATED("계정 생성완료했습니다."),
 	ACCOUNT_UPDATED("계정 수정완료되었습니다."),
-	ACCOUNT_DELETED("걔정 삭제완료되었습니다."),
-
+	ACCOUNT_DELETED("계정 삭제완료되었습니다."),
 	PUBLISHER_CREATED("출판사 생성완료했습니다."),
 	PUBLISHER_UPDATED("출판사 수정완료되었습니다."),
 	PUBLISHER_DELETED("출판사 삭제완료되었습니다."),
